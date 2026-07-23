@@ -2,574 +2,221 @@
 
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
+import styles from './dashboard.module.css';
 
-const starterCommitments = [
-  {
-    id: 1,
-    title: 'Hold the courageous conversation',
-    why: 'Resolve uncertainty and strengthen trust in the leadership team.',
-    deadline: 'Today, 15:00',
-    status: 'in-progress',
-    measure: 'Conversation completed and next steps agreed.',
-  },
-  {
-    id: 2,
-    title: 'Protect strategic thinking time',
-    why: 'Create space for decisions that shape the next 90 days.',
-    deadline: 'Thursday, 10:00',
-    status: 'not-started',
-    measure: 'Two uninterrupted 90-minute strategy blocks completed.',
-  },
-  {
-    id: 3,
-    title: 'Recognise one emerging leader',
-    why: 'Multiply leadership by affirming and developing others.',
-    deadline: 'Friday, 16:00',
-    status: 'completed',
-    measure: 'Feedback shared and one development opportunity agreed.',
-  },
+const differentiators = [
+  'Authentic','Courageous','Transformational','Confident','Bold','Reliable','Trustworthy','Ambitious','Purposeful','Values-driven',
+  'Inspirational','Accessible','Accountable','Disciplined','Responsible','Sharing','Determined','Unrelenting','Resilient','Grateful',
+  'Intentional','Qualified','Self-Aware','Socially Aware','Open-Minded','Curious','Forgiving','Abundance-oriented','Achiever','Mindful',
+  'Diligent','Decisive','Respectful','Productive / Impactful','Resolute','Reasonable / Accommodative','Capable','Blessed','Collaborative','Intuitive'
 ];
 
-const journey = [
-  ['Discover', 'Know who you are today', 100],
-  ['Dream', 'Clarify the future you are building', 86],
-  ['Believe', 'Align your mindset and choices', 72],
-  ['Become', 'Practise the leader you aspire to be', 58],
-  ['Influence', 'Create meaningful impact through others', 34],
-  ['Multiply', 'Develop leaders who develop leaders', 16],
-  ['Legacy', 'Build what will remain after you', 4],
+const phrases = [
+  'Worry ends when faith begins','Set the tone','Stick to your knitting','Trust your gut','Choose wisely',
+  'Courage is not the volume of your voice','Work smart and do not pamper idleness','Shy away from idiots because of their tendency to criminalize intelligence',
+  'Seven blunders of the world that lead to violence','Conserve your energy and know what to overlook','Plant a seed and own your legacy',
+  'Accidental outcomes are short-lived','Speak your truth and enjoy a liberated conscience','Make reliability a reality','Run fast from ignorance',
+  'Lift others as you climb up, because the top is lonely','Your daily routine determines your success','Embrace greatness','Apply situational ethics',
+  'Dare to be different and dare to be you','Break your comfort zone and face challenges with your head held high','Immerse yourself in your purpose',
+  'Get off the pity train before it derails','Life does not revolve around me','Stand by your truth','Trust but verify - Irvin Khoza',
+  'Be ready to re-invent how you are','Surprise yourself and get started','Inside of you are treasures','Value what you have',
+  'Learn to forgive and move on','Lock the doors of hell from the inside - C. S. Lewis','Stay away from negative people; they have a problem with every solution',
+  'A bend in the road is not the end of the road','Traditions connect us to the past','Creative thinking and innovation result in a thriving environment',
+  'Do not flinch in the face of adversity','Use your elbow grease to move ahead of the rest','Do not let the world take your hopes away','Action generates momentum'
 ];
 
-function statusLabel(status) {
-  if (status === 'completed') return 'Completed';
-  if (status === 'in-progress') return 'In progress';
-  return 'Not started';
+const pad = (value) => String(value).padStart(2, '0');
+
+function CardViewer({ type, index, title, onPrevious, onNext, children }) {
+  const folder = type === 'visual' ? 'visual' : type === 'differentiator' ? 'differentiators' : 'phrases';
+  const prefix = type === 'visual' ? 'visual' : type === 'differentiator' ? 'differentiator' : 'phrase';
+  const imagePath = `/cards/${folder}/${prefix}-${pad(index + 1)}.png`;
+
+  return (
+    <section className={styles.viewerPanel}>
+      <div className={styles.viewerHeader}>
+        <div>
+          <span className={styles.eyebrow}>Card {index + 1} of 40</span>
+          <h2>{title}</h2>
+        </div>
+        <div className={styles.viewerControls}>
+          <button type="button" onClick={onPrevious} aria-label="Previous card">&#8592;</button>
+          <button type="button" onClick={onNext} aria-label="Next card">&#8594;</button>
+        </div>
+      </div>
+      <div className={`${styles.cardStage} ${type === 'visual' ? styles.visualStage : ''}`}>
+        <img src={imagePath} alt={title} className={styles.cardImage} />
+      </div>
+      {children}
+    </section>
+  );
 }
 
 export default function ExecutiveDashboard() {
-  const [commitments, setCommitments] = useState(starterCommitments);
-  const [showForm, setShowForm] = useState(false);
-  const [form, setForm] = useState({
-    title: '',
-    why: '',
-    deadline: '',
-    measure: '',
-  });
+  const [activeCollection, setActiveCollection] = useState('today');
+  const [visualIndex, setVisualIndex] = useState(0);
+  const [differentiatorIndex, setDifferentiatorIndex] = useState(0);
+  const [phraseIndex, setPhraseIndex] = useState(39);
+  const [selectedDifferentiators, setSelectedDifferentiators] = useState([]);
+  const [reflection, setReflection] = useState('');
+  const [savedMessage, setSavedMessage] = useState('');
 
   useEffect(() => {
-    const saved = window.localStorage.getItem('its-commitments');
-
-    if (saved) {
-      try {
-        setCommitments(JSON.parse(saved));
-      } catch {
-        setCommitments(starterCommitments);
-      }
+    try {
+      const saved = JSON.parse(localStorage.getItem('its-selected-differentiators') || '[]');
+      const savedReflection = localStorage.getItem('its-latest-reflection') || '';
+      setSelectedDifferentiators(Array.isArray(saved) ? saved : []);
+      setReflection(savedReflection);
+    } catch {
+      setSelectedDifferentiators([]);
     }
   }, []);
 
-  useEffect(() => {
-    window.localStorage.setItem(
-      'its-commitments',
-      JSON.stringify(commitments)
-    );
-  }, [commitments]);
+  const todayIndex = useMemo(() => {
+    const day = Math.floor(Date.now() / 86400000);
+    return day % 40;
+  }, []);
 
-  const completed = commitments.filter(
-    (item) => item.status === 'completed'
-  ).length;
+  const cycle = (setter, direction) => setter((current) => (current + direction + 40) % 40);
 
-  const commitmentRate = commitments.length
-    ? Math.round((completed / commitments.length) * 100)
-    : 0;
-
-  const activeCommitment = useMemo(
-    () =>
-      commitments.find((item) => item.status !== 'completed') ||
-      commitments[0],
-    [commitments]
-  );
-
-  function updateStatus(id, status) {
-    setCommitments((current) =>
-      current.map((item) =>
-        item.id === id ? { ...item, status } : item
-      )
-    );
-  }
-
-  function addCommitment(event) {
-    event.preventDefault();
-
-    if (!form.title.trim() || !form.deadline.trim()) return;
-
-    setCommitments((current) => [
-      {
-        id: Date.now(),
-        title: form.title.trim(),
-        why:
-          form.why.trim() ||
-          'This commitment supports my current leadership journey.',
-        deadline: form.deadline.trim(),
-        measure:
-          form.measure.trim() ||
-          'I will record clear evidence that the commitment was honoured.',
-        status: 'not-started',
-      },
-      ...current,
-    ]);
-
-    setForm({
-      title: '',
-      why: '',
-      deadline: '',
-      measure: '',
+  const toggleDifferentiator = (name) => {
+    setSelectedDifferentiators((current) => {
+      const updated = current.includes(name)
+        ? current.filter((item) => item !== name)
+        : current.length < 6 ? [...current, name] : current;
+      localStorage.setItem('its-selected-differentiators', JSON.stringify(updated));
+      return updated;
     });
+  };
 
-    setShowForm(false);
-  }
+  const saveReflection = () => {
+    localStorage.setItem('its-latest-reflection', reflection);
+    setSavedMessage('Reflection saved to your executive diary.');
+    window.setTimeout(() => setSavedMessage(''), 2800);
+  };
 
   return (
-    <main className="journey-dashboard">
-      <section className="journey-hero">
-        <div className="container journey-hero-grid">
-          <div>
-            <span className="eyebrow light">My leadership journey</span>
+    <main className={styles.pageShell}>
+      <header className={styles.topbar}>
+        <Link href="/" className={styles.brand}>
+          <span className={styles.brandMark}>IS</span>
+          <span><strong>Inspired to Succeed</strong><small>Executive Leadership Experience</small></span>
+        </Link>
+        <nav className={styles.navLinks}>
+          <Link href="/">Home</Link>
+          <Link href="/toolkit">Toolkit</Link>
+          <Link href="/coach">Coach</Link>
+          <Link href="/admin">Admin</Link>
+        </nav>
+      </header>
 
-            <h1>Good morning, Naledi.</h1>
-
-            <p>
-              Leadership grows when inspiration becomes a promise, and a
-              promise becomes consistent action.
-            </p>
-
-            <div className="hero-actions">
-              <a
-                className="button journey-primary"
-                href="#today"
-              >
-                Continue today&apos;s journey
-              </a>
-
-              <Link
-                className="button journey-ghost"
-                href="/toolkit"
-              >
-                Open leadership toolkit
-              </Link>
-            </div>
+      <section className={styles.hero}>
+        <div className={styles.heroCopy}>
+          <span className={styles.eyebrow}>Your private executive reflection room</span>
+          <h1>Lead with clarity.<br />Choose with intention.</h1>
+          <p>Explore the original Inspired to Succeed card collections, capture what each card awakens in you, and shape a leadership identity that is unmistakably your own.</p>
+          <div className={styles.heroActions}>
+            <button type="button" className={styles.primaryButton} onClick={() => setActiveCollection('today')}>Reveal today&apos;s card</button>
+            <button type="button" className={styles.secondaryButton} onClick={() => setActiveCollection('differentiators')}>Build my Leadership DNA</button>
           </div>
-
-          <aside
-            className="daily-card"
-            aria-label="Today's aligning phrase"
-          >
-            <span>Today&apos;s aligning phrase</span>
-
-            <blockquote>
-              “Action generates momentum.”
-            </blockquote>
-
-            <p>
-              Choose one meaningful action that moves your most important
-              leadership goal forward today.
-            </p>
-          </aside>
+        </div>
+        <div className={styles.heroCardStack} aria-hidden="true">
+          <img src={`/cards/visual/visual-${pad((todayIndex % 40) + 1)}.png`} alt="" className={styles.stackBack} />
+          <img src={`/cards/differentiators/differentiator-${pad(((todayIndex + 9) % 40) + 1)}.png`} alt="" className={styles.stackMiddle} />
+          <img src={`/cards/phrases/phrase-${pad(todayIndex + 1)}.png`} alt="" className={styles.stackFront} />
         </div>
       </section>
 
-      <section
-        className="container journey-body"
-        id="today"
-      >
-        <div className="journey-summary-grid">
-          <article className="journey-stat featured">
-            <span>Leadership momentum</span>
-            <strong>68%</strong>
+      <section className={styles.collectionBar} aria-label="Card collections">
+        {[
+          ['today', 'Today\'s Card', 'Daily executive prompt'],
+          ['visual', 'Visual Reflections', '40 image cards'],
+          ['differentiators', 'Differentiators', '40 leadership qualities'],
+          ['phrases', 'Aligning Phrases', '40 wisdom cards']
+        ].map(([id, label, detail]) => (
+          <button key={id} type="button" className={activeCollection === id ? styles.activeCollection : ''} onClick={() => setActiveCollection(id)}>
+            <strong>{label}</strong><span>{detail}</span>
+          </button>
+        ))}
+      </section>
 
-            <div className="momentum-track">
-              <i style={{ width: '68%' }} />
-            </div>
-
-            <small>
-              Momentum is increasing — 12% this month.
-            </small>
-          </article>
-
-          <article className="journey-stat">
-            <span>Promises honoured</span>
-            <strong>
-              {completed}/{commitments.length}
-            </strong>
-            <small>
-              {commitmentRate}% current completion rate
-            </small>
-          </article>
-
-          <article className="journey-stat">
-            <span>Reflection streak</span>
-            <strong>18 days</strong>
-            <small>Your longest streak is 31 days</small>
-          </article>
-
-          <article className="journey-stat">
-            <span>Current milestone</span>
-            <strong>Become</strong>
-            <small>
-              Practising leadership through action
-            </small>
-          </article>
-        </div>
-
-        <div className="journey-main-grid">
-          <section className="journey-panel current-focus">
-            <div className="journey-panel-heading">
-              <div>
-                <span className="eyebrow">
-                  Today&apos;s leadership focus
-                </span>
-
-                <h2>Turn intention into action</h2>
-              </div>
-
-              <span className="focus-badge">
-                Courageous
-              </span>
-            </div>
-
-            {activeCommitment ? (
-              <div className="promise-card">
-                <span className="promise-label">
-                  My executive promise
-                </span>
-
-                <h3>{activeCommitment.title}</h3>
-
-                <p>{activeCommitment.why}</p>
-
-                <dl>
-                  <div>
-                    <dt>Deadline</dt>
-                    <dd>{activeCommitment.deadline}</dd>
-                  </div>
-
-                  <div>
-                    <dt>Success measure</dt>
-                    <dd>{activeCommitment.measure}</dd>
-                  </div>
-                </dl>
-
-                <div className="promise-actions">
-                  <button
-                    onClick={() =>
-                      updateStatus(
-                        activeCommitment.id,
-                        'in-progress'
-                      )
-                    }
-                    className="button secondary"
-                  >
-                    I am working on it
-                  </button>
-
-                  <button
-                    onClick={() =>
-                      updateStatus(
-                        activeCommitment.id,
-                        'completed'
-                      )
-                    }
-                    className="button journey-primary"
-                  >
-                    I honoured this promise
-                  </button>
-                </div>
-              </div>
-            ) : (
-              <div className="empty-state">
-                Create your first leadership commitment for today.
-              </div>
-            )}
-          </section>
-
-          <section className="journey-panel check-in-panel">
-            <span className="eyebrow">
-              Midday check-in
-            </span>
-
-            <h2>How are you doing?</h2>
-
-            <p>
-              Select the response that best describes your progress.
-              Commitments are saved locally in the browser during this
-              prototype phase.
-            </p>
-
-            <div className="check-in-options">
-              <button type="button">
-                😀
-                <span>On track</span>
-              </button>
-
-              <button type="button">
-                😐
-                <span>Some challenges</span>
-              </button>
-
-              <button type="button">
-                🌱
-                <span>I need support</span>
-              </button>
-            </div>
-          </section>
-        </div>
-
-        <section className="journey-panel commitments-panel">
-          <div className="journey-panel-heading">
-            <div>
-              <span className="eyebrow">
-                Commitment and accountability
-              </span>
-
-              <h2>My leadership commitments</h2>
-
-              <p>
-                Every commitment has a purpose, a deadline and a visible
-                measure of success.
-              </p>
-            </div>
-
-            <button
-              className="button journey-primary"
-              onClick={() =>
-                setShowForm((value) => !value)
-              }
+      <section className={styles.workspace}>
+        {activeCollection === 'today' && (
+          <div className={styles.todayGrid}>
+            <CardViewer
+              type="phrase"
+              index={todayIndex}
+              title={phrases[todayIndex]}
+              onPrevious={() => { setPhraseIndex((todayIndex + 39) % 40); setActiveCollection('phrases'); }}
+              onNext={() => { setPhraseIndex((todayIndex + 1) % 40); setActiveCollection('phrases'); }}
             >
-              {showForm
-                ? 'Close form'
-                : '+ New commitment'}
-            </button>
-          </div>
-
-          {showForm && (
-            <form
-              className="commitment-form"
-              onSubmit={addCommitment}
-            >
-              <label>
-                What exactly will you do?
-
-                <input
-                  value={form.title}
-                  onChange={(event) =>
-                    setForm({
-                      ...form,
-                      title: event.target.value,
-                    })
-                  }
-                  placeholder="Example: Hold a coaching conversation with my team leader"
-                  required
-                />
-              </label>
-
-              <label>
-                Why does this matter?
-
-                <textarea
-                  value={form.why}
-                  onChange={(event) =>
-                    setForm({
-                      ...form,
-                      why: event.target.value,
-                    })
-                  }
-                  placeholder="Connect the commitment to your purpose, values or goal."
-                />
-              </label>
-
-              <div className="form-two-column">
-                <label>
-                  By when?
-
-                  <input
-                    value={form.deadline}
-                    onChange={(event) =>
-                      setForm({
-                        ...form,
-                        deadline: event.target.value,
-                      })
-                    }
-                    placeholder="Friday, 15:00"
-                    required
-                  />
-                </label>
-
-                <label>
-                  How will success be measured?
-
-                  <input
-                    value={form.measure}
-                    onChange={(event) =>
-                      setForm({
-                        ...form,
-                        measure: event.target.value,
-                      })
-                    }
-                    placeholder="Clear evidence of completion"
-                  />
-                </label>
+              <div className={styles.cardCaption}>
+                <span>Today&apos;s executive invitation</span>
+                <strong>What will you do differently because of this card?</strong>
               </div>
+            </CardViewer>
 
-              <button
-                className="button journey-primary"
-                type="submit"
-              >
-                Make this commitment
-              </button>
-            </form>
-          )}
-
-          <div className="commitment-list">
-            {commitments.map((item) => (
-              <article
-                className={`commitment-item ${item.status}`}
-                key={item.id}
-              >
-                <div
-                  className="commitment-status-mark"
-                  aria-hidden="true"
-                >
-                  {item.status === 'completed'
-                    ? '✓'
-                    : item.status === 'in-progress'
-                    ? '→'
-                    : '○'}
-                </div>
-
-                <div className="commitment-copy">
-                  <div className="commitment-title-row">
-                    <h3>{item.title}</h3>
-
-                    <span className={`status ${item.status}`}>
-                      {statusLabel(item.status)}
-                    </span>
-                  </div>
-
-                  <p>{item.why}</p>
-
-                  <small>
-                    <b>By:</b> {item.deadline}
-                    &nbsp;·&nbsp;
-                    <b>Success:</b> {item.measure}
-                  </small>
-                </div>
-
-                <select
-                  value={item.status}
-                  onChange={(event) =>
-                    updateStatus(
-                      item.id,
-                      event.target.value
-                    )
-                  }
-                  aria-label={`Update ${item.title}`}
-                >
-                  <option value="not-started">
-                    Not started
-                  </option>
-
-                  <option value="in-progress">
-                    In progress
-                  </option>
-
-                  <option value="completed">
-                    Completed
-                  </option>
-                </select>
-              </article>
-            ))}
+            <aside className={styles.reflectionPanel}>
+              <span className={styles.eyebrow}>Executive Diary</span>
+              <h2>Turn insight into action.</h2>
+              <label htmlFor="reflection">My reflection and leadership commitment</label>
+              <textarea id="reflection" value={reflection} onChange={(event) => setReflection(event.target.value)} placeholder="Write what this card is asking of you today..." />
+              <button type="button" className={styles.primaryButton} onClick={saveReflection}>Save reflection</button>
+              {savedMessage && <p className={styles.savedMessage}>{savedMessage}</p>}
+              <div className={styles.coachPrompt}>
+                <span>Coach conversation</span>
+                <p>Take this reflection into your next coaching session and ask: “What might I be avoiding?”</p>
+                <Link href="/coach">Open coach portal &#8594;</Link>
+              </div>
+            </aside>
           </div>
-        </section>
+        )}
 
-        <section className="journey-panel milestones-panel">
-          <div className="journey-panel-heading">
-            <div>
-              <span className="eyebrow">
-                The Inspired to Succeed journey
-              </span>
-
-              <h2>Your seven milestones</h2>
+        {activeCollection === 'visual' && (
+          <CardViewer type="visual" index={visualIndex} title={`Visual Reflection ${visualIndex + 1}`} onPrevious={() => cycle(setVisualIndex, -1)} onNext={() => cycle(setVisualIndex, 1)}>
+            <div className={styles.promptGrid}>
+              <article><span>Notice</span><p>What is the first detail that draws your attention?</p></article>
+              <article><span>Connect</span><p>Where does this image meet your current leadership reality?</p></article>
+              <article><span>Act</span><p>What decision, conversation or action does it invite?</p></article>
             </div>
+          </CardViewer>
+        )}
 
-            <Link
-              href="/toolkit"
-              className="text-link"
-            >
-              Explore the full journey →
-            </Link>
+        {activeCollection === 'differentiators' && (
+          <div className={styles.dnaGrid}>
+            <CardViewer type="differentiator" index={differentiatorIndex} title={differentiators[differentiatorIndex]} onPrevious={() => cycle(setDifferentiatorIndex, -1)} onNext={() => cycle(setDifferentiatorIndex, 1)}>
+              <button type="button" className={selectedDifferentiators.includes(differentiators[differentiatorIndex]) ? styles.selectedButton : styles.primaryButton} onClick={() => toggleDifferentiator(differentiators[differentiatorIndex])}>
+                {selectedDifferentiators.includes(differentiators[differentiatorIndex]) ? 'Selected for my Leadership DNA' : 'Add to my Leadership DNA'}
+              </button>
+            </CardViewer>
+            <aside className={styles.dnaPanel}>
+              <span className={styles.eyebrow}>Leadership DNA</span>
+              <h2>Choose up to six differentiators.</h2>
+              <p>These are the qualities you want people to consistently experience when they are led by you.</p>
+              <div className={styles.dnaTokens}>
+                {selectedDifferentiators.length ? selectedDifferentiators.map((item, idx) => (
+                  <button key={item} type="button" onClick={() => toggleDifferentiator(item)}><span>{idx + 1}</span>{item}<b>&times;</b></button>
+                )) : <em>Your selected leadership qualities will appear here.</em>}
+              </div>
+              <div className={styles.dnaCount}>{selectedDifferentiators.length}<span>/ 6 selected</span></div>
+            </aside>
           </div>
+        )}
 
-          <div className="milestone-grid">
-            {journey.map(
-              ([name, description, progress], index) => (
-                <article
-                  className={
-                    progress === 100
-                      ? 'complete'
-                      : progress > 0
-                      ? 'active'
-                      : ''
-                  }
-                  key={name}
-                >
-                  <div className="milestone-number">
-                    {String(index + 1).padStart(2, '0')}
-                  </div>
+        {activeCollection === 'phrases' && (
+          <CardViewer type="phrase" index={phraseIndex} title={phrases[phraseIndex]} onPrevious={() => cycle(setPhraseIndex, -1)} onNext={() => cycle(setPhraseIndex, 1)}>
+            <div className={styles.cardCaption}>
+              <span>Aligning question</span>
+              <strong>How would your next decision change if you fully lived this phrase?</strong>
+            </div>
+          </CardViewer>
+        )}
+      </section>
 
-                  <h3>{name}</h3>
-
-                  <p>{description}</p>
-
-                  <div className="milestone-progress">
-                    <i
-                      style={{
-                        width: `${progress}%`,
-                      }}
-                    />
-                  </div>
-
-                  <small>
-                    {progress}% complete
-                  </small>
-                </article>
-              )
-            )}
-          </div>
-        </section>
-
-        <section className="reflection-callout">
-          <div>
-            <span className="eyebrow light">
-              Evening reflection
-            </span>
-
-            <h2>
-              Did you honour the promise you made to yourself?
-            </h2>
-
-            <p>
-              Review what happened, what you learnt, and what you will do
-              differently tomorrow.
-            </p>
-          </div>
-
-          <Link
-            className="button journey-ghost"
-            href="/toolkit"
-          >
-            Open executive diary
-          </Link>
-        </section>
+      <section className={styles.bottomCollections}>
+        <article><span>01</span><div><strong>See differently</strong><p>Use imagery to surface what ordinary conversation may miss.</p></div></article>
+        <article><span>02</span><div><strong>Name your difference</strong><p>Choose the qualities that define your leadership signature.</p></div></article>
+        <article><span>03</span><div><strong>Align your action</strong><p>Translate each phrase into a visible commitment.</p></div></article>
       </section>
     </main>
   );
