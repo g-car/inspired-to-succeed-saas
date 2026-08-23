@@ -58,11 +58,6 @@ const phraseCards = [
       'Influence the atmosphere and expectations around you through your actions, language and presence.',
   },
   {
-    title: 'Stick to your knitting',
-    meaning:
-      'Strengthen what you know, care about and are equipped to do well.',
-  },
-  {
     title: 'Trust your gut',
     meaning:
       'Listen to experience, instinct and intuition, particularly when time or information is limited.',
@@ -78,11 +73,6 @@ const phraseCards = [
       'Your vision and inner conviction remain valuable even when they are not loudly expressed.',
   },
   {
-    title: 'Work smart and don’t pamper idleness',
-    meaning:
-      'Prioritise effectiveness and meaningful effort rather than unnecessary exertion.',
-  },
-  {
     title: 'Conserve your energy and know what to overlook',
     meaning:
       'Protect your attention by deciding which matters deserve your energy and which do not.',
@@ -91,11 +81,6 @@ const phraseCards = [
     title: 'Plant a seed and own your legacy',
     meaning:
       'Small acts of contribution, gratitude, ideas and service accumulate into lasting impact.',
-  },
-  {
-    title: 'Accidental outcomes are short-lived',
-    meaning:
-      'Be deliberate enough to remain accountable for the results and impact of your choices.',
   },
   {
     title: 'Speak your truth and enjoy a liberated conscience',
@@ -108,16 +93,6 @@ const phraseCards = [
       'Consistency and dependability build the trust that allows others to contribute to your success.',
   },
   {
-    title: 'Run fast from ignorance',
-    meaning:
-      'Treat learning and knowledge as essential resources for leadership and success.',
-  },
-  {
-    title: 'Lift others as you climb up, because the top is lonely',
-    meaning:
-      'Develop others as you advance so that success is supported by meaningful relationships.',
-  },
-  {
     title: 'Your daily routine determines your success',
     meaning:
       'Progressive thoughts become habits, character and eventually visible action.',
@@ -128,89 +103,14 @@ const phraseCards = [
       'Intentionally expose yourself to people, places, events and ideas that stretch your aspirations.',
   },
   {
-    title: 'Apply situational ethics',
-    meaning:
-      'Consider context while allowing love, compassion and avoidance of harm to guide judgement.',
-  },
-  {
     title: 'Dare to be different and Dare to be You',
     meaning:
       'Have the courage to own your individuality rather than conforming unnecessarily.',
   },
   {
-    title: 'Break your comfort zone and face challenges with your head held high',
-    meaning:
-      'Growth requires movement beyond the safety of familiar conditions.',
-  },
-  {
     title: 'Stand by your truth',
     meaning:
       'Do not knowingly surrender truth simply because falsehood feels easier or more convenient.',
-  },
-  {
-    title: 'Trust but verify',
-    meaning:
-      'Build trust while still applying appropriate judgement, evidence and accountability.',
-  },
-  {
-    title: 'Be ready to re-invent how you are',
-    meaning:
-      'Release attachments and habits that no longer produce value or progress.',
-  },
-  {
-    title: 'Surprise yourself and get started',
-    meaning:
-      'Action begins before certainty; movement itself creates learning and opportunity.',
-  },
-  {
-    title: 'Inside of you are treasures',
-    meaning:
-      'Recognise and explore your own talents, abilities and natural strengths.',
-  },
-  {
-    title: 'Value what you have',
-    meaning:
-      'Recognise the worth of what is already present before becoming consumed by what is missing.',
-  },
-  {
-    title: 'Learn to forgive and move on',
-    meaning:
-      'Release what keeps your attention trapped in the past and redirect energy toward progress.',
-  },
-  {
-    title: 'Stay away from negative people, they have a problem with every solution',
-    meaning:
-      'Protect constructive thinking from habitual negativity that offers no useful alternative.',
-  },
-  {
-    title: 'A bend in the road is not the end of the road',
-    meaning:
-      'Goals may require adaptation; changed routes do not necessarily mean failed journeys.',
-  },
-  {
-    title: 'Traditions connect us to the past',
-    meaning:
-      'Respect identity and history while remaining capable of adaptation for the future.',
-  },
-  {
-    title: 'Creative thinking and innovation result in a thriving environment',
-    meaning:
-      'Ideas only become valuable when they are translated into meaningful action.',
-  },
-  {
-    title: 'Do not flinch in the face of adversity',
-    meaning:
-      'Composure under pressure improves judgement, clarity and decision-making.',
-  },
-  {
-    title: 'Use your elbow grease to move ahead of the rest',
-    meaning:
-      'Participating in progressive opportunities creates exposure, experience and momentum.',
-  },
-  {
-    title: 'Don’t let the world take your hopes away',
-    meaning:
-      'Remain focused on your meaningful goal despite distraction, fashion or temporary temptation.',
   },
   {
     title: 'Action Generates Momentum',
@@ -222,82 +122,54 @@ const phraseCards = [
     meaning:
       'Protect focus on what you genuinely believe in and reduce unnecessary external distraction.',
   },
-  {
-    title: 'Get off the pity train before it derails',
-    meaning:
-      'Acknowledge emotion without allowing it to dominate your identity, choices or future.',
-  },
-  {
-    title: 'Life doesn’t revolve around me',
-    meaning:
-      'Develop internal confidence rather than becoming dependent on constant praise and external approval.',
-  },
 ];
 
-const imageCards = [
-  { id: 1, title: 'Boardroom', meaning: 'Leadership, authority and governance' },
-  { id: 2, title: 'Camera', meaning: 'Perspective, visibility and how you frame the world' },
-  { id: 3, title: 'Books', meaning: 'Learning, knowledge and continuous growth' },
-  { id: 4, title: 'Tax Time', meaning: 'Responsibility, compliance and discipline' },
-  { id: 5, title: 'Executive Presence', meaning: 'Professional confidence and reflection' },
-  { id: 6, title: 'City at Night', meaning: 'Movement, ambition and possibility' },
-  { id: 7, title: 'Construction', meaning: 'Building, infrastructure and tangible progress' },
-  { id: 8, title: 'Change the Ending', meaning: 'Agency, renewal and personal transformation' },
-  { id: 9, title: 'Unlock Potential', meaning: 'Belief, growth and possibility' },
-  { id: 10, title: 'Artificial Intelligence', meaning: 'Technology, innovation and the future' },
-  { id: 11, title: 'Diversity', meaning: 'Difference, inclusion and belonging' },
-  { id: 12, title: 'Giving', meaning: 'Contribution, generosity and service' },
-  { id: 13, title: 'Winner', meaning: 'Achievement, excellence and recognition' },
-  { id: 14, title: 'I Can', meaning: 'Confidence, resilience and self-belief' },
-  { id: 15, title: 'Helping Hand', meaning: 'Support, mentorship and collaboration' },
-  { id: 16, title: 'Target', meaning: 'Goals, focus and measurable achievement' },
-  { id: 17, title: 'Teamwork', meaning: 'Collaboration and collective achievement' },
-  { id: 18, title: 'Health', meaning: 'Wellbeing and sustainable leadership' },
-  { id: 19, title: 'Dream in Colour', meaning: 'Vision, creativity and possibility' },
-  { id: 20, title: 'Healthy Life', meaning: 'Balance, wellbeing and self-care' },
-  { id: 21, title: 'Top Rated', meaning: 'Excellence and high performance' },
-  { id: 22, title: 'Be Strong', meaning: 'Resilience and perseverance' },
-  { id: 23, title: 'Fitness', meaning: 'Energy, discipline and physical wellbeing' },
-  { id: 24, title: 'Pause, Breathe, Ponder, Choose, Do', meaning: 'Reflection before action' },
-  { id: 25, title: 'Dream It, Believe It, Achieve It', meaning: 'Aspiration and achievement' },
-  { id: 26, title: 'Wake Up, Kick Ass, Be Kind, Repeat', meaning: 'Drive balanced by humanity' },
-  { id: 27, title: 'Meeting Room', meaning: 'Leadership, dialogue and collective decision-making' },
-  { id: 28, title: 'Signing', meaning: 'Commitment, accountability and formal action' },
-  { id: 29, title: 'Resort', meaning: 'Reward, balance and quality of life' },
-  { id: 30, title: 'Launch', meaning: 'Beginning, action and new ventures' },
-  { id: 31, title: 'Cockpit', meaning: 'Direction, responsibility and control' },
-  { id: 32, title: 'Supported Tree', meaning: 'Strength, support and sustainability' },
-  { id: 33, title: 'Make It Right', meaning: 'Excellence, responsibility and quality' },
-  { id: 34, title: 'Create, Solve, Act', meaning: 'Creativity, engineering and entrepreneurship' },
-  { id: 35, title: 'Sunshine', meaning: 'Positive relationships and emotional wellbeing' },
-  { id: 36, title: 'Analytics', meaning: 'Evidence, data and informed decisions' },
-  { id: 37, title: 'Private Travel', meaning: 'Aspiration, achievement and lifestyle' },
-  { id: 38, title: 'Highway Network', meaning: 'Choice, direction and strategic pathways' },
-  { id: 39, title: 'Refreshment', meaning: 'Renewal and reward' },
-  { id: 40, title: 'Mercedes', meaning: 'Achievement, aspiration and personal reward' },
-];
+const visionCards = Array.from({ length: 40 }, (_, index) => ({
+  id: index + 1,
+  src: `/wezi_vision_cards/vision-card-${String(index + 1).padStart(2, '0')}.webp`,
+}));
 
 export default function VisionBoardPage() {
   const [selectedDifferentiator, setSelectedDifferentiator] = useState('');
   const [selectedPhrase, setSelectedPhrase] = useState(null);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImages, setSelectedImages] = useState([]);
   const [personalMeaning, setPersonalMeaning] = useState('');
+  const [futureShift, setFutureShift] = useState('');
 
   const progress = useMemo(() => {
     let completed = 0;
 
     if (selectedDifferentiator) completed++;
     if (selectedPhrase) completed++;
-    if (selectedImage) completed++;
+    if (selectedImages.length > 0) completed++;
     if (personalMeaning.trim()) completed++;
 
     return completed;
   }, [
     selectedDifferentiator,
     selectedPhrase,
-    selectedImage,
+    selectedImages,
     personalMeaning,
   ]);
+
+  function toggleImage(card) {
+    const alreadySelected = selectedImages.some(
+      (item) => item.id === card.id
+    );
+
+    if (alreadySelected) {
+      setSelectedImages((previous) =>
+        previous.filter((item) => item.id !== card.id)
+      );
+      return;
+    }
+
+    if (selectedImages.length >= 6) {
+      return;
+    }
+
+    setSelectedImages((previous) => [...previous, card]);
+  }
 
   return (
     <main style={styles.page}>
@@ -316,7 +188,7 @@ export default function VisionBoardPage() {
 
         <p style={styles.heroText}>
           Begin with identity. Choose the thought that keeps you aligned.
-          Then select the visual that represents the future you are building.
+          Then select the images that make your future visible.
         </p>
 
         <div style={styles.progress}>
@@ -365,8 +237,7 @@ export default function VisionBoardPage() {
           </h2>
 
           <p style={styles.darkIntro}>
-            Choose an Aligning Phrase. Each phrase carries a leadership
-            message, not merely a slogan.
+            Choose the phrase that best anchors the way you want to lead.
           </p>
 
           <div style={styles.phraseGrid}>
@@ -398,41 +269,85 @@ export default function VisionBoardPage() {
         </h2>
 
         <p style={styles.intro}>
-          Select the image that best represents the future, possibility,
-          achievement, relationship or state you want to make visible.
+          Browse the original image cards and choose up to six images that
+          best represent the life, leadership, relationships, achievements
+          or future you are working towards.
         </p>
 
+        <div style={styles.counter}>
+          <strong>{selectedImages.length} of 6 selected</strong>
+
+          {selectedImages.length === 6 && (
+            <span>Maximum reached</span>
+          )}
+        </div>
+
         <div style={styles.imageGrid}>
-          {imageCards.map((card) => (
-            <button
-              type="button"
-              key={card.id}
-              onClick={() => setSelectedImage(card)}
-              style={{
-                ...styles.imageCard,
-                ...(selectedImage?.id === card.id
-                  ? styles.imageSelected
-                  : {}),
-              }}
-            >
-              <span style={styles.imageNumber}>
-                {String(card.id).padStart(2, '0')}
-              </span>
+          {visionCards.map((card) => {
+            const selected = selectedImages.some(
+              (item) => item.id === card.id
+            );
 
-              <strong>{card.title}</strong>
+            return (
+              <button
+                type="button"
+                key={card.id}
+                onClick={() => toggleImage(card)}
+                style={{
+                  ...styles.imageCard,
+                  ...(selected ? styles.imageSelected : {}),
+                }}
+              >
+                <img
+                  src={card.src}
+                  alt={`Vision board card ${card.id}`}
+                  style={styles.image}
+                />
 
-              <span style={styles.imageMeaning}>
-                {card.meaning}
-              </span>
-            </button>
-          ))}
+                <div
+                  style={{
+                    ...styles.imageOverlay,
+                    ...(selected
+                      ? styles.imageOverlaySelected
+                      : {}),
+                  }}
+                >
+                  <span>
+                    {selected ? '✓ Selected for my future' : 'Select'}
+                  </span>
+                </div>
+              </button>
+            );
+          })}
         </div>
+      </section>
 
-        <div style={styles.imageNotice}>
-          The original photographs from Wezi Khoza&apos;s Image Card deck
-          will replace these labelled selections once the image assets are
-          placed in the application&apos;s public folder.
-        </div>
+      <section style={styles.futureBoardSection}>
+        <span style={styles.stepGold}>
+          MY FUTURE BOARD
+        </span>
+
+        <h2 style={styles.futureBoardTitle}>
+          The future I am choosing
+        </h2>
+
+        {selectedImages.length === 0 ? (
+          <div style={styles.emptyBoard}>
+            Your selected images will appear here.
+          </div>
+        ) : (
+          <div style={styles.collage}>
+            {selectedImages.map((card) => (
+              <div style={styles.collageItem} key={card.id}>
+                <img
+                  src={card.src}
+                  alt={`Selected vision card ${card.id}`}
+                  style={styles.collageImage}
+                />
+              </div>
+            ))}
+          </div>
+        )}
       </section>
 
       <section style={styles.meaningSection}>
@@ -440,25 +355,41 @@ export default function VisionBoardPage() {
           <span style={styles.stepGold}>STEP 4</span>
 
           <h2 style={styles.meaningTitle}>
-            What does this combination mean to me?
+            When I look at this future, what do I see?
           </h2>
 
           <p style={styles.meaningText}>
-            Your Vision Board becomes meaningful when you explain the
-            connection between who you want to become, what will guide you
-            and what you can see.
+            Describe the meaning behind your choices. What do these images
+            say about the leader, life and legacy you are trying to build?
           </p>
         </div>
 
-        <textarea
-          value={personalMeaning}
-          onChange={(event) =>
-            setPersonalMeaning(event.target.value)
-          }
-          rows="8"
-          placeholder="Example: I want to become a more reliable leader. 'Set the tone' reminds me that consistency starts with my own behaviour. The boardroom represents the kind of calm, trusted executive presence I want to develop..."
-          style={styles.textarea}
-        />
+        <div>
+          <textarea
+            value={personalMeaning}
+            onChange={(event) =>
+              setPersonalMeaning(event.target.value)
+            }
+            rows="7"
+            placeholder="Example: These images represent the kind of leader I want to become, the environments I want to create, the impact I want to have and the quality of life I want to protect..."
+            style={styles.textarea}
+          />
+
+          <label style={styles.shiftLabel}>
+            What must change in my present life or leadership for this future
+            to become possible?
+          </label>
+
+          <textarea
+            value={futureShift}
+            onChange={(event) =>
+              setFutureShift(event.target.value)
+            }
+            rows="5"
+            placeholder="What needs to change now?"
+            style={styles.textarea}
+          />
+        </div>
       </section>
 
       <section style={styles.boardSection}>
@@ -470,61 +401,65 @@ export default function VisionBoardPage() {
           The leader I am becoming
         </h2>
 
-        <div style={styles.boardGrid}>
-          <article style={styles.boardCardGold}>
-            <span style={styles.boardLabel}>
+        <div style={styles.summaryGrid}>
+          <article style={styles.goldCard}>
+            <span style={styles.summaryLabel}>
               MY DIFFERENTIATOR
             </span>
 
-            <strong style={styles.boardBig}>
+            <strong style={styles.summaryBig}>
               {selectedDifferentiator || 'Not yet selected'}
             </strong>
           </article>
 
-          <article style={styles.boardCardDark}>
-            <span style={styles.boardLabelGold}>
+          <article style={styles.darkCard}>
+            <span style={styles.summaryLabelGold}>
               MY ALIGNING PHRASE
             </span>
 
-            <strong style={styles.boardPhrase}>
+            <strong style={styles.summaryPhrase}>
               {selectedPhrase
                 ? `“${selectedPhrase.title}”`
                 : 'Not yet selected'}
             </strong>
-
-            {selectedPhrase && (
-              <p style={styles.boardSubtle}>
-                {selectedPhrase.meaning}
-              </p>
-            )}
           </article>
+        </div>
 
-          <article style={styles.boardCard}>
-            <span style={styles.boardLabel}>
-              MY VISUAL FUTURE
+        {selectedImages.length > 0 && (
+          <div style={styles.finalBoard}>
+            {selectedImages.map((card) => (
+              <img
+                key={card.id}
+                src={card.src}
+                alt={`Vision card ${card.id}`}
+                style={styles.finalImage}
+              />
+            ))}
+          </div>
+        )}
+
+        <div style={styles.reflectionSummary}>
+          <div>
+            <span style={styles.summaryLabel}>
+              WHAT THIS FUTURE MEANS TO ME
             </span>
 
-            <strong style={styles.boardBig}>
-              {selectedImage?.title || 'Not yet selected'}
-            </strong>
-
-            {selectedImage && (
-              <p style={styles.boardBody}>
-                {selectedImage.meaning}
-              </p>
-            )}
-          </article>
-
-          <article style={styles.boardCard}>
-            <span style={styles.boardLabel}>
-              WHAT THIS MEANS TO ME
-            </span>
-
-            <p style={styles.boardBody}>
+            <p>
               {personalMeaning.trim() ||
-                'Add your personal meaning in Step 4.'}
+                'Complete your reflection in Step 4.'}
             </p>
-          </article>
+          </div>
+
+          <div>
+            <span style={styles.summaryLabel}>
+              WHAT MUST CHANGE NOW
+            </span>
+
+            <p>
+              {futureShift.trim() ||
+                'Identify the shift required in your present leadership.'}
+            </p>
+          </div>
         </div>
 
         {progress === 4 && (
@@ -532,11 +467,14 @@ export default function VisionBoardPage() {
             <strong>Your Vision Board foundation is complete.</strong>
 
             <span>
-              The next stage is to translate this leadership identity into
-              your Ideal State and development pathway.
+              You have identified who you want to become, what will guide you
+              and the future you want to make visible.
             </span>
 
-            <Link href="/toolkit/ideal-state" style={styles.nextButton}>
+            <Link
+              href="/toolkit/ideal-state"
+              style={styles.nextButton}
+            >
               Continue to Ideal State →
             </Link>
           </div>
@@ -630,7 +568,7 @@ const styles = {
 
   intro: {
     color: '#6d655c',
-    maxWidth: '760px',
+    maxWidth: '820px',
     lineHeight: 1.7,
     marginBottom: '30px',
   },
@@ -651,7 +589,7 @@ const styles = {
       'linear-gradient(135deg,#f2dda4,#cf951c)',
     color: '#15120d',
     fontFamily: 'Georgia,serif',
-    fontSize: '19px',
+    fontSize: '18px',
     fontWeight: 800,
     cursor: 'pointer',
   },
@@ -693,7 +631,7 @@ const styles = {
   },
 
   phraseCard: {
-    minHeight: '170px',
+    minHeight: '165px',
     padding: '20px',
     border: '1px solid #333',
     borderRadius: '14px',
@@ -710,58 +648,105 @@ const styles = {
     border: '3px solid #dda72c',
   },
 
+  counter: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    gap: '20px',
+    marginBottom: '18px',
+    color: '#8c681a',
+  },
+
   imageGrid: {
+    display: 'grid',
+    gridTemplateColumns:
+      'repeat(auto-fit,minmax(190px,1fr))',
+    gap: '14px',
+  },
+
+  imageCard: {
+    position: 'relative',
+    aspectRatio: '1 / 1',
+    overflow: 'hidden',
+    borderRadius: '16px',
+    border: '2px solid transparent',
+    padding: 0,
+    background: '#fff',
+    cursor: 'pointer',
+  },
+
+  imageSelected: {
+    border: '4px solid #dda72c',
+    boxShadow: '0 12px 30px rgba(0,0,0,.12)',
+  },
+
+  image: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    display: 'block',
+  },
+
+  imageOverlay: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    padding: '12px',
+    background:
+      'linear-gradient(transparent,rgba(0,0,0,.72))',
+    color: '#fff',
+    fontWeight: 800,
+    textAlign: 'left',
+  },
+
+  imageOverlaySelected: {
+    background:
+      'linear-gradient(transparent,rgba(193,139,24,.94))',
+  },
+
+  futureBoardSection: {
+    padding:
+      '64px max(24px,calc((100vw - 1320px)/2))',
+    background: '#1f1b15',
+    color: '#fff',
+  },
+
+  futureBoardTitle: {
+    fontFamily: 'Georgia,serif',
+    fontSize: '42px',
+  },
+
+  emptyBoard: {
+    padding: '30px',
+    border: '1px dashed rgba(255,255,255,.25)',
+    borderRadius: '16px',
+    color: 'rgba(255,255,255,.6)',
+  },
+
+  collage: {
     display: 'grid',
     gridTemplateColumns:
       'repeat(auto-fit,minmax(210px,1fr))',
     gap: '12px',
   },
 
-  imageCard: {
-    minHeight: '150px',
-    padding: '18px',
-    border: '1px solid #ded3c4',
-    borderRadius: '15px',
-    background: '#fff',
-    cursor: 'pointer',
-    display: 'grid',
-    alignContent: 'space-between',
-    gap: '12px',
-    textAlign: 'left',
+  collageItem: {
+    overflow: 'hidden',
+    borderRadius: '16px',
+    aspectRatio: '1 / 1',
   },
 
-  imageSelected: {
-    border: '3px solid #dda72c',
-    boxShadow: '0 10px 25px rgba(0,0,0,.08)',
-  },
-
-  imageNumber: {
-    color: '#a57819',
-    fontWeight: 900,
-    fontSize: '11px',
-  },
-
-  imageMeaning: {
-    color: '#786f66',
-    fontSize: '13px',
-    lineHeight: 1.5,
-  },
-
-  imageNotice: {
-    marginTop: '20px',
-    padding: '16px',
-    borderRadius: '12px',
-    background: '#eee6da',
-    color: '#6f675e',
-    fontSize: '13px',
-    lineHeight: 1.6,
+  collageImage: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    display: 'block',
   },
 
   meaningSection: {
     padding:
       '60px max(24px,calc((100vw - 1320px)/2))',
-    background: '#211c15',
-    color: '#fff',
+    background: '#ede5d8',
     display: 'grid',
     gridTemplateColumns:
       'minmax(0,.8fr) minmax(0,1.2fr)',
@@ -774,7 +759,7 @@ const styles = {
   },
 
   meaningText: {
-    color: 'rgba(255,255,255,.67)',
+    color: '#6c645b',
     lineHeight: 1.7,
   },
 
@@ -783,9 +768,17 @@ const styles = {
     boxSizing: 'border-box',
     padding: '16px',
     borderRadius: '14px',
-    border: 0,
+    border: '1px solid #d7cbbb',
     font: 'inherit',
     lineHeight: 1.6,
+    marginBottom: '18px',
+  },
+
+  shiftLabel: {
+    display: 'block',
+    fontWeight: 800,
+    marginBottom: '10px',
+    lineHeight: 1.5,
   },
 
   boardSection: {
@@ -800,15 +793,15 @@ const styles = {
     margin: '12px 0 30px',
   },
 
-  boardGrid: {
+  summaryGrid: {
     display: 'grid',
     gridTemplateColumns:
-      'repeat(auto-fit,minmax(260px,1fr))',
+      'repeat(auto-fit,minmax(280px,1fr))',
     gap: '16px',
   },
 
-  boardCardGold: {
-    minHeight: '220px',
+  goldCard: {
+    minHeight: '180px',
     padding: '24px',
     borderRadius: '18px',
     background:
@@ -817,8 +810,8 @@ const styles = {
     alignContent: 'space-between',
   },
 
-  boardCardDark: {
-    minHeight: '220px',
+  darkCard: {
+    minHeight: '180px',
     padding: '24px',
     borderRadius: '18px',
     background: '#111',
@@ -827,49 +820,52 @@ const styles = {
     alignContent: 'space-between',
   },
 
-  boardCard: {
-    minHeight: '220px',
-    padding: '24px',
-    borderRadius: '18px',
-    background: '#fff',
-    border: '1px solid #e1d6c7',
-    display: 'grid',
-    alignContent: 'space-between',
-  },
-
-  boardLabel: {
+  summaryLabel: {
+    color: '#8a6310',
     fontSize: '10px',
     fontWeight: 900,
     letterSpacing: '.14em',
-    color: '#8d6613',
   },
 
-  boardLabelGold: {
-    fontSize: '10px',
-    fontWeight: 900,
-    letterSpacing: '.14em',
+  summaryLabelGold: {
     color: '#dda72c',
+    fontSize: '10px',
+    fontWeight: 900,
+    letterSpacing: '.14em',
   },
 
-  boardBig: {
+  summaryBig: {
     fontFamily: 'Georgia,serif',
-    fontSize: '30px',
+    fontSize: '32px',
   },
 
-  boardPhrase: {
+  summaryPhrase: {
     fontFamily: 'Georgia,serif',
-    fontSize: '25px',
+    fontSize: '26px',
     lineHeight: 1.4,
   },
 
-  boardSubtle: {
-    color: 'rgba(255,255,255,.65)',
-    lineHeight: 1.6,
+  finalBoard: {
+    display: 'grid',
+    gridTemplateColumns:
+      'repeat(auto-fit,minmax(200px,1fr))',
+    gap: '10px',
+    marginTop: '18px',
   },
 
-  boardBody: {
-    color: '#6f675f',
-    lineHeight: 1.7,
+  finalImage: {
+    width: '100%',
+    aspectRatio: '1 / 1',
+    objectFit: 'cover',
+    borderRadius: '14px',
+  },
+
+  reflectionSummary: {
+    display: 'grid',
+    gridTemplateColumns:
+      'repeat(auto-fit,minmax(280px,1fr))',
+    gap: '16px',
+    marginTop: '18px',
   },
 
   complete: {
