@@ -6,7 +6,6 @@ const themes = [
   {
     id: 'values',
     name: 'Values Driven',
-    short: 'Values',
     modules: [
       'Values',
       'Discipline',
@@ -18,7 +17,6 @@ const themes = [
   {
     id: 'culture',
     name: 'Cultural Competence',
-    short: 'Culture',
     modules: [
       'Collaboration',
       'Diversity, Equity, Inclusion & Belonging',
@@ -33,7 +31,6 @@ const themes = [
   {
     id: 'performance',
     name: 'Performance Centred',
-    short: 'Performance',
     modules: [
       'Innovation',
       'Business Intelligence',
@@ -46,7 +43,6 @@ const themes = [
   {
     id: 'strategy',
     name: 'Strategic & Integrative',
-    short: 'Strategy',
     modules: [
       'Positioning',
       'Artificial Intelligence',
@@ -60,7 +56,6 @@ const themes = [
   {
     id: 'people',
     name: 'People Oriented',
-    short: 'People',
     modules: [
       'Talent Attraction',
       'Corporate Health',
@@ -74,7 +69,6 @@ const themes = [
   {
     id: 'personal',
     name: 'Personal Development',
-    short: 'Personal',
     modules: [
       'Industry Expertise',
       'Understanding Data',
@@ -92,11 +86,11 @@ const moduleContent = {
     quote: 'Values before titles. Impact over ego.',
     author: 'Inspired to Succeed™',
     intro:
-      'Clarify who you are, how you lead, and what legacy you are building — not simply what you achieve.',
+      'Clarify what truly guides you when responsibility, pressure and competing interests collide.',
     questions: [
       'Which values guide my leadership decisions most often?',
       'Where in my life or leadership do I need greater alignment with my values?',
-      'How do my values show up in the way I treat power, authority, and responsibility?',
+      'How do my values show up in the way I treat power, authority and responsibility?',
       'What principles guide my decisions in uncertainty?',
       'Am I leading from conviction or convenience?',
     ],
@@ -106,11 +100,11 @@ const moduleContent = {
     quote: 'Discipline conquers stormy seas.',
     author: 'Wezi Khoza',
     intro:
-      'Discipline turns intention into reliable behaviour, particularly when motivation is absent.',
+      'Discipline turns intention into dependable leadership behaviour.',
     questions: [
       'Where do I need to say no more often to protect my energy and focus?',
       'How do I hold myself accountable when no one is watching?',
-      'How do I want to show up when motivation fades, but commitment remains?',
+      'How do I want to show up when motivation fades but commitment remains?',
       'What non-negotiable routines anchor my mornings and evenings?',
       'What disciplined boundaries will I set around availability and decision-making?',
     ],
@@ -118,44 +112,43 @@ const moduleContent = {
 
   Agility: {
     quote: 'Intelligence is the ability to quickly adapt to change.',
-    author: 'Jonas Ridderstrale et al.',
+    author: 'Inspired to Succeed™',
     intro:
-      'Agility asks the executive to remain strategically anchored while adapting intelligently to changing realities.',
+      'Agility asks the executive to remain strategically anchored while adapting intelligently.',
     questions: [
-      'How do I respond when priorities suddenly change or unexpected challenges arise?',
+      'How do I respond when priorities suddenly change?',
       'Which emerging trends or technologies should I pay attention to this year?',
-      'In what situations can agility be modelled from executive levels down to the shopfloor?',
-      'How do I ensure balance between long-term strategy and short-term adaptability?',
-      'What are the benefits of an agile organisation in the VUCA and BANI world?',
+      'Where can agility be modelled from executive level to the shopfloor?',
+      'How do I balance long-term strategy with short-term adaptability?',
+      'What would a genuinely agile organisation look like?',
     ],
   },
 
   'Courageous Leadership': {
-    quote: 'Boldness is not second nature to everyone, it is intentionality.',
-    author: 'Janna Cachola',
+    quote: 'Boldness is intentional.',
+    author: 'Inspired to Succeed™',
     intro:
-      'Courageous leadership concerns voice, visibility, conviction and the willingness to make difficult decisions.',
+      'Courageous leadership concerns voice, visibility, conviction and difficult decisions.',
     questions: [
       'Where am I being called to use my voice more powerfully?',
-      'How can I lead visibly and unapologetically without shrinking or over-explaining?',
-      'What bold decision would move the organisation forward, even if it is unpopular?',
+      'How can I lead visibly without shrinking or over-explaining?',
+      'What bold decision would move the organisation forward?',
       'Where am I choosing comfort over conviction?',
       'What perspective or insight do I bring that no one else can?',
     ],
   },
 
   Citizenship: {
-    quote:
-      'Ask not what the country can do for you — ask what you can do for your country.',
-    author: 'John F. Kennedy',
+    quote: 'Leadership reaches beyond the organisation.',
+    author: 'Inspired to Succeed™',
     intro:
-      'Executive citizenship connects leadership responsibility to community, society and the wider public good.',
+      'Executive citizenship connects leadership responsibility to community and the wider public good.',
     questions: [
-      'What principles guide my decisions as a citizen, both personally and professionally?',
-      'How do I define responsible citizenship in my role as a leader?',
-      'Which community issues are closest to my heart, and how can I address them as an organisation?',
-      'Which partnerships or networks could amplify my impact on citizenship and civic engagement?',
-      'How can I balance profit, growth, and social good in my role?',
+      'What principles guide my decisions as a citizen and leader?',
+      'How do I define responsible citizenship in my role?',
+      'Which community issues are closest to my heart?',
+      'Which partnerships could amplify my social impact?',
+      'How can I balance profit, growth and social good?',
     ],
   },
 
@@ -165,11 +158,11 @@ const moduleContent = {
     intro:
       'Collaboration becomes strategic when leaders intentionally share power, insight and responsibility.',
     questions: [
-      'How does collaboration advance the mission, values, and long-term vision I am responsible for?',
-      'Where or when is collaboration a strategic advantage, not just a soft skill?',
-      'How do I model collaboration through my decisions, tone, and behaviour?',
-      'Where does competition exist that should be replaced with cooperation?',
-      'What beliefs do I have about power or control that may be limiting collaboration?',
+      'How does collaboration advance the mission and long-term vision?',
+      'Where is collaboration a strategic advantage?',
+      'How do I model collaboration through my decisions and behaviour?',
+      'Where should competition be replaced with cooperation?',
+      'What beliefs about power or control may be limiting collaboration?',
     ],
   },
 
@@ -177,42 +170,41 @@ const moduleContent = {
     quote: 'Do not glorify the hunter until you hear the stories of the hunted.',
     author: 'Wezi Khoza',
     intro:
-      'Inclusive leadership asks executives to examine systems, resources, voice, fairness and belonging.',
+      'Inclusive leadership examines systems, resources, voice, fairness and belonging.',
     questions: [
       'Is DEIB leadership progressive or counter-productive for my organisation and why?',
       'How do I model inclusive leadership in everyday decisions?',
-      'How am I resourcing equity beyond intention through budget, policy and accountability?',
-      'What does my organisation look like when DEIB is fully lived, not labelled?',
-      'What systems, mindsets, or structures need to be dismantled or rebuilt?',
+      'How am I resourcing equity beyond intention?',
+      'What does the organisation look like when belonging is genuinely lived?',
+      'What systems or mindsets need to be dismantled or rebuilt?',
     ],
   },
 
   'Environmental, Societal & Governance': {
-    quote:
-      'Doing ESG right can contribute to reducing poverty, inequality and unemployment.',
+    quote: 'Responsible leadership must create value beyond compliance.',
     author: 'Inspired to Succeed™',
     intro:
-      'ESG should move beyond compliance and become part of strategy, value creation and responsible leadership.',
+      'ESG becomes leadership when environmental and social responsibility are embedded into strategy.',
     questions: [
-      'How does our business model actively regenerate, not just reduce harm to, the planet?',
-      'How are we aligning ESG goals with financial performance and capital allocation?',
-      'How do we show transparency and accountability on our ESG decisions?',
-      'How do we ensure ESG is embedded in strategy, not treated as a compliance exercise?',
-      'How does ESG directly support long-term value creation and resilience?',
+      'How does our business model actively regenerate rather than only reduce harm?',
+      'How are ESG goals aligned with financial performance?',
+      'How do we demonstrate transparency and accountability?',
+      'How do we ensure ESG is strategic rather than merely compliance driven?',
+      'How does ESG support long-term resilience and value creation?',
     ],
   },
 
   Globalisation: {
     quote: 'Keep sight of the shore while discovering the ocean.',
-    author: 'Anonymous',
+    author: 'Inspired to Succeed™',
     intro:
-      'Global leadership requires expansion without losing identity, relevance or strategic anchoring.',
+      'Global leadership requires expansion without losing relevance, identity or strategic anchoring.',
     questions: [
-      'Which regions, markets, or economies am I strategically called to engage or expand into?',
-      'How does my work contribute to a more connected, equitable, and sustainable world?',
-      'In what ways do I want my leadership to be felt across borders and cultures?',
+      'Which regions or markets am I strategically called to engage?',
+      'How does my work contribute to a more connected world?',
+      'How do I want my leadership to be experienced across cultures?',
       'How do I balance global standardisation with local relevance?',
-      'What anchors me when global pressures and uncertainties rise?',
+      'What anchors me when global uncertainty rises?',
     ],
   },
 
@@ -220,99 +212,97 @@ const moduleContent = {
     quote: 'Presence is my mantra because presence is power.',
     author: 'Wezi Khoza',
     intro:
-      'Relationships shape trust, influence, reputation and the executive capacity to achieve through others.',
+      'Relationships shape trust, influence, reputation and the capacity to achieve through others.',
     questions: [
       'How do my values influence the way I connect with others?',
-      'What communication habits can I adopt to strengthen trust, collaboration and relations?',
-      'What strategies can help me maintain long-term, mutually beneficial relationships?',
-      'Which networks or communities should I engage with to achieve my relational goals?',
-      'How will I measure the success of my relationships personally, professionally, and organisationally?',
+      'What communication habits can strengthen trust and collaboration?',
+      'How can I maintain mutually beneficial relationships?',
+      'Which networks should I intentionally engage?',
+      'How will I measure the success of my relationships?',
     ],
   },
 
   Competition: {
-    quote: 'Competition brings out the best in products and the worst in people.',
-    author: 'David Sarnoff',
+    quote: 'Know the field without losing yourself in it.',
+    author: 'Inspired to Succeed™',
     intro:
-      'Competitive awareness should sharpen leadership without undermining values or collaborative intelligence.',
+      'Competitive intelligence should sharpen leadership without weakening values.',
     questions: [
-      'Who are my main competitors, and what are they doing differently from me?',
-      'Which competitors are most likely to disrupt my business in the next 3–5 years?',
-      'Am I encouraging innovative ideas from staff to stay ahead of competitors?',
-      'How can I model resilience and adaptability for my team against competitors?',
-      'Which leadership qualities do I need to sharpen to outperform rivals?',
+      'Who are my main competitors and what are they doing differently?',
+      'Who could disrupt our business in the next three to five years?',
+      'Am I encouraging enough innovation from my team?',
+      'How can I model resilience against competitive pressure?',
+      'Which leadership qualities do I need to sharpen?',
     ],
   },
 
   'Social Intelligence': {
-    quote: 'The new science of human relationships.',
-    author: 'Daniel Goleman',
+    quote: 'Leadership is experienced through relationships.',
+    author: 'Inspired to Succeed™',
     intro:
-      'Social intelligence develops awareness of people, context, emotion and the quality of interpersonal influence.',
+      'Social intelligence develops awareness of people, context and the quality of interpersonal influence.',
     questions: [
-      'What emotions or triggers do I want to manage better?',
-      'How can I create a work culture where everyone feels heard, respected and motivated?',
-      'Which limiting beliefs about social interactions do I want to let go of?',
-      'What activities or environments help me connect more authentically with others?',
-      'How can my organisation show empathy to topical societal ills?',
+      'What emotional triggers do I need to manage better?',
+      'How can I create a culture where people feel heard and respected?',
+      'Which limiting beliefs about social interaction should I release?',
+      'What helps me connect more authentically?',
+      'How can my organisation demonstrate empathy?',
     ],
   },
 
   'Emotional Intelligence': {
-    quote: 'IQ gets you hired. EQ gets you promoted.',
-    author: 'Anonymous',
+    quote: 'Emotional awareness strengthens leadership judgement.',
+    author: 'Inspired to Succeed™',
     intro:
-      'Emotional intelligence supports resilience, judgement, communication and leadership under pressure.',
+      'Emotional intelligence supports resilience, communication and judgement under pressure.',
     questions: [
-      'How do I deal with organisational situations that trigger stress, frustration or impatience in me?',
-      'How do I model and express resilience and adaptability in my leadership?',
+      'How do I deal with situations that trigger frustration or impatience?',
+      'How do I model resilience and adaptability?',
       'How do I respond to setbacks and criticism?',
-      'What signs indicate that someone or a team is struggling emotionally or professionally?',
-      'How can I improve collaboration and communication across teams to manage potential conflicts?',
+      'How do I recognise when colleagues are struggling?',
+      'How can I improve communication during conflict?',
     ],
   },
 
   Innovation: {
     quote: 'Traditions connect us to the past and innovation connects us to the future.',
-    author: 'Anonymous',
+    author: 'Inspired to Succeed™',
     intro:
-      'Innovation asks leaders to create environments where ideas can be tested, scaled and translated into value.',
+      'Innovation requires environments where ideas can be tested, challenged and translated into value.',
     questions: [
-      'If disruption is inevitable, how do I want to lead it rather than react to it?',
+      'If disruption is inevitable, how do I want to lead it?',
       'Where should innovation be incremental versus transformational?',
-      'What kind of innovation culture do I want to intentionally model?',
-      'What processes are stifling innovation and need to be redesigned?',
-      'How do I empower others to think beyond their job titles?',
-      'What would innovation at scale look like in daily operations?',
+      'What kind of innovation culture do I want to model?',
+      'What processes are currently stifling innovation?',
+      'How do I empower people to think beyond their job titles?',
     ],
   },
 
   'Business Intelligence': {
-    quote: 'The measure of intelligence is the ability to change.',
-    author: 'Albert Einstein',
+    quote: 'Insight only matters when it improves decisions.',
+    author: 'Inspired to Succeed™',
     intro:
-      'Business intelligence requires executives to turn data into understanding and understanding into decisions.',
+      'Business Intelligence should translate evidence into executive understanding and action.',
     questions: [
-      'How can I maintain energy and focus while managing high-level BI responsibilities?',
-      'Which thought leaders, books or courses can expand my BI expertise?',
-      'What stories or data visualisations can I create to make insights actionable and compelling?',
-      'What new BI tools, AI or analytics methods should I explore?',
-      'What information matters even when it cannot easily be counted?',
+      'How can I remain focused while managing high-level BI responsibilities?',
+      'What knowledge can expand my BI expertise?',
+      'How can I make data insights compelling and actionable?',
+      'What new BI tools or analytics approaches should I explore?',
+      'What important information cannot easily be counted?',
     ],
   },
 
   'Change Leadership': {
-    quote:
-      'The only way to make sense out of change is to plunge into it, move with it, and join the dance.',
-    author: 'Alan Watts',
+    quote: 'Change must be led, not merely announced.',
+    author: 'Inspired to Succeed™',
     intro:
-      'Change leadership requires deliberate decisions about why change is needed, how people experience it and what values must remain intact.',
+      'Change leadership connects purpose, people, culture and organisational movement.',
     questions: [
-      'What will inform my decision to effect change organisationally?',
-      'What mindset shifts do I need to adopt to embrace change successfully?',
-      'Which key priorities must I focus on to ensure successful change implementation?',
-      'Which cultural or behavioural shifts are needed in my organisation?',
-      'How do I ensure organisational values are not compromised during change?',
+      'What should inform my decision to effect organisational change?',
+      'What mindset shifts are required?',
+      'Which priorities will determine successful implementation?',
+      'Which cultural shifts are necessary?',
+      'How do I ensure organisational values survive change?',
     ],
   },
 
@@ -320,41 +310,41 @@ const moduleContent = {
     quote: 'Trust your gut but weigh your options.',
     author: 'Wezi Khoza',
     intro:
-      'Executive decisions draw on judgement, evidence, intuition, consultation and accountability.',
+      'Executive decisions combine judgement, evidence, intuition and accountability.',
     questions: [
-      'How would I describe my current approach to decision-making?',
-      'What patterns in my past decisions have led to my greatest successes and failures?',
-      'What are the most important decisions I will have to make in the near future?',
-      'Which decisions, if made well, will have the greatest impact?',
-      'What information or data do I most rely on when making decisions, and is it sufficient?',
+      'How would I describe my current decision-making style?',
+      'What patterns exist in my best and worst decisions?',
+      'What major decisions am I likely to face soon?',
+      'Which decisions could create the greatest impact?',
+      'What information do I rely on and is it sufficient?',
     ],
   },
 
   'Problem Solving': {
-    quote: 'A problem shared is a problem halved.',
-    author: 'Joanne Harris',
+    quote: 'Complex problems require disciplined curiosity.',
+    author: 'Inspired to Succeed™',
     intro:
-      'Effective problem solving combines clarity, creativity, evidence and collective intelligence.',
+      'Effective problem solving combines clarity, evidence, creativity and collective intelligence.',
     questions: [
       'How do I define a successful solution?',
-      'How can I cultivate creativity, critical thinking and strategic insight when solving problems?',
-      'What tools or methodologies can enhance my problem-solving capabilities?',
-      'What environment best supports innovative problem-solving?',
-      'How will I know that my problem-solving efforts are making a meaningful difference?',
+      'How can I improve critical and creative thinking?',
+      'Which tools can strengthen my problem-solving ability?',
+      'What environment supports innovative problem solving?',
+      'How will I know whether a solution has made a meaningful difference?',
     ],
   },
 
   Governance: {
-    quote: 'The speed of decision making is the essence of good governance.',
-    author: 'Piyush Goyal',
+    quote: 'Governance is stewardship made visible.',
+    author: 'Inspired to Succeed™',
     intro:
-      'Governance concerns stewardship, trust, accountability, constructive challenge and ethical boundaries.',
+      'Governance concerns trust, accountability, challenge and ethical boundaries.',
     questions: [
-      'What legacy of governance do I want this organisation to be known for?',
-      'In what ways am I a steward of trust for shareholders, employees and society?',
-      'What governance blind spots must be addressed now, not later?',
-      'How do I encourage constructive challenge rather than compliance?',
-      'Where do I draw the ethical line that I will never cross?',
+      'What governance legacy should this organisation be known for?',
+      'How am I a steward of stakeholder trust?',
+      'What governance blind spots must be addressed?',
+      'How do I encourage constructive challenge?',
+      'Which ethical line will I never cross?',
     ],
   },
 
@@ -362,13 +352,13 @@ const moduleContent = {
     quote: 'Your brand is what people say about you when you are not in the room.',
     author: 'Jeff Bezos',
     intro:
-      'Executive positioning connects identity, reputation, value and the spaces in which your leadership should be visible.',
+      'Executive positioning connects identity, reputation and strategic visibility.',
     questions: [
       'What core strength must define my executive presence?',
-      'How does my positioning serve people beyond profit or status?',
-      'What platforms or conversations align with my next level?',
-      'In my industry, what space do or could I uniquely occupy?',
-      'Does my positioning reflect who I am, who I am becoming, or who I used to be?',
+      'How does my positioning serve people beyond status?',
+      'What platforms align with my next level?',
+      'What unique space could I occupy in my industry?',
+      'Does my positioning reflect who I am becoming?',
     ],
   },
 
@@ -376,13 +366,13 @@ const moduleContent = {
     quote: 'There is an island of opportunity in every complexity.',
     author: 'Wezi Khoza',
     intro:
-      'AI leadership requires executives to consider innovation, humanity, trust, capability and responsible guardrails.',
+      'AI leadership requires innovation, humanity, trust and responsible guardrails.',
     questions: [
-      'How does my work in AI serve humanity, not just markets?',
-      'Where do I want my organisation to be in the next 5–10 years of AI evolution?',
-      'How am I shaping AI that is inclusive, explainable and trustworthy?',
-      'What guardrails am I setting to prevent misuse or bias?',
-      'What new AI capability, domain or mindset must I master next?',
+      'How does my work in AI serve humanity?',
+      'Where should my organisation be in five to ten years of AI evolution?',
+      'How can AI remain inclusive and trustworthy?',
+      'What guardrails are needed to prevent misuse or bias?',
+      'What new AI capability or mindset must I master?',
     ],
   },
 
@@ -390,42 +380,41 @@ const moduleContent = {
     quote: 'You snooze, you lose.',
     author: 'Anonymous',
     intro:
-      'ICT leadership requires awareness of emerging technologies while keeping strategic, human and organisational outcomes in view.',
+      'ICT leadership requires technological awareness linked to strategic outcomes.',
     questions: [
-      'Which emerging technologies must I intentionally explore now?',
-      'Where must I think bigger, bolder and more futuristically on ICT?',
-      'How do I align ICT strategy with overall business and national goals?',
-      'How can ICT enable growth, efficiency and sustainability?',
-      'How do I optimise ICT to protect time for rest, family and renewal?',
+      'Which technologies must I intentionally explore now?',
+      'Where must I think bigger on ICT?',
+      'How do I align ICT with business goals?',
+      'How can ICT enable efficiency and sustainability?',
+      'How do I prevent technology from overwhelming human wellbeing?',
     ],
   },
 
   'Digital Transformation': {
-    quote:
-      'Some people do not like change, but you need to embrace change if the alternative is disaster.',
-    author: 'Elon Musk',
+    quote: 'Transformation requires letting go before moving forward.',
+    author: 'Inspired to Succeed™',
     intro:
-      'Digital transformation demands changes in systems, behaviour, collaboration, values and trust.',
+      'Digital transformation changes systems, behaviour, collaboration and trust.',
     questions: [
-      'What legacy systems, processes or mindsets must we let go of?',
-      'How can I empower cross-silo collaboration without compromising individual strengths?',
-      'What values can drive a successful digital transformation journey?',
-      'What are my value metrics for a thorough digital transformation ecosystem?',
-      'How do cybersecurity, ethics and trust feature in our digital future?',
+      'Which legacy systems or mindsets must we release?',
+      'How can I strengthen cross-silo collaboration?',
+      'What values should drive transformation?',
+      'Which metrics will demonstrate transformation value?',
+      'How do cybersecurity, ethics and trust feature in our future?',
     ],
   },
 
   'Infrastructure Development': {
-    quote: 'Invent yourself and then reinvent yourself.',
-    author: 'Charles Bukowski',
+    quote: 'Build today for the future you intend to create.',
+    author: 'Inspired to Succeed™',
     intro:
-      'Infrastructure leadership considers long-term vision, transformation, technology and partnerships.',
+      'Infrastructure leadership connects future vision, innovation and partnerships.',
     questions: [
-      'What is my vision for infrastructure over the next 5–10 years?',
-      'Which infrastructure projects would have the most transformative impact?',
-      'How can I leverage data, AI or smart systems to improve resilience?',
-      'How can public-private partnerships enhance infrastructure goals?',
-      'What images, symbols or words represent my ideal future for infrastructure?',
+      'What is my infrastructure vision for the next five to ten years?',
+      'Which projects would have the greatest transformative impact?',
+      'How can AI and smart systems strengthen infrastructure?',
+      'How can partnerships advance infrastructure goals?',
+      'What images represent my ideal infrastructure future?',
     ],
   },
 
@@ -433,42 +422,41 @@ const moduleContent = {
     quote: 'Knowledge is like a garden; if it is not cultivated, it cannot be harvested.',
     author: 'African Proverb',
     intro:
-      'Knowledge must be preserved, shared, protected and converted into better decisions.',
+      'Knowledge must be preserved, shared and converted into better decisions.',
     questions: [
-      'What knowledge or expertise do we most want to preserve and share?',
-      'How do we want Knowledge Management to impact decision-making, efficiency and innovation?',
-      'What challenges do we face in capturing, storing and sharing knowledge?',
-      'Which areas need the most improvement in Knowledge Management?',
-      'How can I leverage AI and ICT to secure our intellectual property?',
+      'What knowledge should we preserve and share?',
+      'How should knowledge management improve decision-making?',
+      'What prevents effective knowledge sharing?',
+      'Which processes need improvement?',
+      'How can AI and ICT protect intellectual property?',
     ],
   },
 
   'Strategic Thinking': {
-    quote:
-      'Some people wish it would happen, some want it to happen and others make it happen.',
+    quote: 'Some people wish it would happen, some want it to happen and others make it happen.',
     author: 'Michael Jordan',
     intro:
       'Strategic thinking connects long-term intent with environmental awareness and deliberate action.',
     questions: [
-      'How can I inspire others to embrace and execute a strategic vision?',
-      'What is the long-term impact I want to create?',
-      'Which external factors could dramatically change my business in the next 1–3 years?',
-      'How can I better balance short-term results with long-term priorities?',
-      'How do I turn complex challenges into strategic opportunities?',
+      'How can I inspire others to execute strategic vision?',
+      'What long-term impact do I want to create?',
+      'Which external factors could change our business?',
+      'How can I balance short-term and long-term priorities?',
+      'How do I turn complex challenges into opportunities?',
     ],
   },
 
   'Talent Attraction': {
     quote: 'Talent makes capital dance.',
-    author: 'Jonas Ridderstrale & Kjell Nordstrom',
+    author: 'Inspired to Succeed™',
     intro:
-      'Talent leadership concerns attraction, retention, development and organisational reputation.',
+      'Talent leadership concerns attraction, retention, development and reputation.',
     questions: [
-      'Which personal strengths do I want to amplify to attract, retain and grow talent?',
-      'How can we position our organisation as the employer of choice?',
-      'What gaps exist in our current talent pipeline?',
-      'What programmes or practices will help attract and retain top talent?',
-      'How will I measure success in developing internal talent?',
+      'Which strengths should I amplify to attract talent?',
+      'How can we become an employer of choice?',
+      'What gaps exist in our talent pipeline?',
+      'Which practices will attract and retain top talent?',
+      'How will we measure internal talent development?',
     ],
   },
 
@@ -476,28 +464,27 @@ const moduleContent = {
     quote: 'The first wealth is health.',
     author: 'Ralph Waldo Emerson',
     intro:
-      'Corporate health considers the physical, mental, emotional and organisational conditions that support sustainable performance.',
+      'Corporate health supports sustainable human and organisational performance.',
     questions: [
-      'How can I create a culture where employees feel supported, energised and motivated?',
-      'What initiatives will improve mental, physical, occupational and emotional health?',
-      'What role do innovation and adaptability play in sustaining a healthy organisation?',
-      'Which indicators will show that we are thriving, not just surviving?',
-      'How can I leverage technology to ensure a holistically healthy organisation?',
+      'How can I create a supportive and energised culture?',
+      'Which initiatives will improve employee wellbeing?',
+      'What role does innovation play in organisational health?',
+      'Which metrics show that we are thriving?',
+      'How can technology support holistic organisational health?',
     ],
   },
 
   Reward: {
-    quote:
-      'People work for money but will go an extra mile for recognition and rewards.',
-    author: 'Dale Carnegie',
+    quote: 'Recognition gives meaning to contribution.',
+    author: 'Inspired to Succeed™',
     intro:
-      'Reward asks how recognition, incentives and organisational value are aligned.',
+      'Reward connects recognition, motivation, fairness and organisational value.',
     questions: [
-      'What does a rewarding work experience look like for me personally?',
-      'What systems could make rewards more meaningful for employees?',
-      'What internal and external factors influence our reward structure?',
-      'How can I ensure that rewards align with individual and organisational goals?',
-      'Which reward strategies resonate most with our industry?',
+      'What does a rewarding work experience look like?',
+      'How can reward systems become more meaningful?',
+      'Which factors influence our reward structure?',
+      'How can rewards align with organisational goals?',
+      'Which reward strategies suit our industry?',
     ],
   },
 
@@ -505,13 +492,13 @@ const moduleContent = {
     quote: 'A leader’s lasting value is measured by succession.',
     author: 'John C. Maxwell',
     intro:
-      'Succession planning asks leaders to consider continuity, transition, talent and the organisation beyond themselves.',
+      'Succession asks leaders to think beyond themselves toward continuity and future capability.',
     questions: [
-      'How does a succession plan benefit the organisation strategically?',
-      'How do I envision the organisation evolving after I move on?',
+      'How does succession planning benefit the organisation?',
+      'How should the organisation evolve after I move on?',
       'What does a successful transition look like?',
-      'What is the relationship between succession and business continuity?',
-      'How can we optimise AI in driving succession plans?',
+      'How does succession support business continuity?',
+      'How could AI strengthen succession planning?',
     ],
   },
 
@@ -519,28 +506,27 @@ const moduleContent = {
     quote: 'The function of leadership is to produce more leaders, not more followers.',
     author: 'Ralph Nader',
     intro:
-      'Executive coaching creates deliberate space for insight, behavioural change and leadership multiplication.',
+      'Coaching creates deliberate space for insight and behavioural change.',
     questions: [
-      'Do I or any of my executive leaders require Executive Coaching?',
-      'What are the anticipated benefits of executive coaching?',
-      'Should DEIB be considered essential in Executive Coaching and why?',
-      'How do I maintain my energy, focus and well-being while leading and coaching?',
-      'How can Executive Coaching inspire teams and make a lasting impact?',
+      'Do I or members of my executive team require coaching?',
+      'What benefits should coaching create?',
+      'How should inclusion feature in executive coaching?',
+      'How do I maintain wellbeing while leading and coaching?',
+      'How can coaching inspire lasting impact?',
     ],
   },
 
   'Executive Sponsorship': {
-    quote:
-      'Somebody opened the door for me; I entered and left it open while opening others.',
+    quote: 'Somebody opened the door for me; I entered and left it open while opening others.',
     author: 'Wezi Khoza',
     intro:
-      'Sponsorship concerns advocacy, visibility, power structures and opening opportunities for others.',
+      'Sponsorship concerns advocacy, visibility, power structures and opportunity.',
     questions: [
-      'In which areas do I need strategic advocacy and not merit alone?',
-      'What distinctive value do I bring that makes sponsorship a smart investment?',
-      'What power structures do I need to better understand and navigate?',
-      'What do I want my sponsors to say about me when I am not in the room?',
-      'Whom am I sponsoring, and how visible is my advocacy?',
+      'Where do I need strategic advocacy rather than merit alone?',
+      'What value makes sponsorship of me worthwhile?',
+      'Which power structures must I better understand?',
+      'What do I want sponsors to say when I am not in the room?',
+      'Whom am I sponsoring and how visible is my advocacy?',
     ],
   },
 
@@ -548,13 +534,13 @@ const moduleContent = {
     quote: 'Start where you are, use what you have, do what you can.',
     author: 'Arthur Ashe',
     intro:
-      'Remote leadership requires trust, communication, psychological safety, transparency and creativity.',
+      'Remote leadership requires trust, communication and psychological safety.',
     questions: [
-      'What core values should guide our interactions and decisions when working remotely?',
-      'How can I foster trust, collaboration and psychological safety across distances?',
-      'What communication habits or tools will keep my team connected and motivated?',
-      'How can I balance transparency with efficiency?',
-      'How will I encourage creativity when the team is not physically together?',
+      'Which values should guide remote interactions?',
+      'How can I foster trust across distance?',
+      'Which communication habits will keep the team connected?',
+      'How can I balance transparency and efficiency?',
+      'How can I encourage remote creativity?',
     ],
   },
 
@@ -562,13 +548,13 @@ const moduleContent = {
     quote: 'The future belongs to those who believe in the beauty of their dreams.',
     author: 'Eleanor Roosevelt',
     intro:
-      'Industry expertise requires curiosity, continuous learning, influence and anticipation of change.',
+      'Industry expertise requires continuous learning and anticipation of change.',
     questions: [
-      'What emerging trends or innovations in my industry excite me most?',
-      'How can I create sustainable knowledge that benefits others?',
-      'Who are the thought leaders I admire?',
-      'Which platforms can amplify my industry voice?',
-      'How can I stay ahead of technological or market shifts?',
+      'Which industry trends excite me most?',
+      'How can I create knowledge that benefits others?',
+      'Who are the thought leaders I can learn from?',
+      'Which platforms could amplify my professional voice?',
+      'How can I stay ahead of technological and market shifts?',
     ],
   },
 
@@ -576,13 +562,13 @@ const moduleContent = {
     quote: 'In God we trust; others must bring data.',
     author: 'W. Edwards Deming',
     intro:
-      'Data becomes valuable when it strengthens judgement rather than replacing it.',
+      'Data becomes valuable when it strengthens executive judgement.',
     questions: [
-      'What role does data play in the vision of my organisation?',
-      'How do I want data to influence decision-making in my leadership?',
-      'What would a fully data-driven culture look like?',
-      'Which data insights do I want to rely on most for strategic decisions?',
-      'What new tools, technologies or platforms should I explore?',
+      'What role does data play in organisational vision?',
+      'How should data influence my decisions?',
+      'What would a data-driven culture look like?',
+      'Which insights matter most for strategic decisions?',
+      'Which new technologies should I explore?',
     ],
   },
 
@@ -590,13 +576,13 @@ const moduleContent = {
     quote: 'Believe you can, and you are halfway there.',
     author: 'Theodore Roosevelt',
     intro:
-      'Growth mindset concerns reframing limitation, learning from failure and stretching beyond comfort.',
+      'Growth mindset concerns learning, courage and reframing limitation.',
     questions: [
-      'Which limiting thoughts have held me back, and how can I reframe them?',
-      'How often have I embraced failure as a learning opportunity?',
-      'How do I want my mindset to influence my team and organisation?',
-      'Which bold goals challenge me beyond my comfort zone?',
-      'What practices keep me aligned with my vision for growth?',
+      'Which limiting thoughts have held me back?',
+      'How do I respond to failure?',
+      'How should my mindset influence others?',
+      'Which bold goals stretch me?',
+      'What practices keep me aligned with growth?',
     ],
   },
 
@@ -604,12 +590,12 @@ const moduleContent = {
     quote: 'The key to successful leadership is influence, not authority.',
     author: 'Ken Blanchard',
     intro:
-      'Influence is about credibility, relationships, visibility and impact rather than positional power.',
+      'Influence depends on credibility, relationships and impact.',
     questions: [
-      'Who are the people I admire for their influence?',
-      'In what areas can I have the most impact?',
+      'Who do I admire for their influence?',
+      'Where can I have the greatest impact?',
       'Which stakeholders are critical for me to influence?',
-      'What goals can I set to measure my progress in influencing others?',
+      'How will I measure my influence?',
       'How do I balance influence with authenticity?',
     ],
   },
@@ -618,13 +604,13 @@ const moduleContent = {
     quote: 'Do it right the first time, and make sure even the last time, it is right.',
     author: 'Wezi Khoza',
     intro:
-      'Self-mastery begins with leading yourself before attempting to lead others.',
+      'Self-mastery begins with leading yourself before leading others.',
     questions: [
-      'Who am I becoming as a leader beyond my title and achievements?',
-      'How do I lead myself with integrity before leading others?',
-      'How do I respond under pressure, and how do I want to respond in hindsight?',
-      'How do I create calm, clarity and confidence in uncertain moments?',
-      'What boundaries reflect self-respect and leadership maturity?',
+      'Who am I becoming beyond my title and achievements?',
+      'How do I lead myself with integrity?',
+      'How do I respond under pressure?',
+      'How do I create calm and clarity in uncertainty?',
+      'What boundaries reflect leadership maturity?',
     ],
   },
 
@@ -632,12 +618,12 @@ const moduleContent = {
     quote: 'Imagine it, go ahead and make it real.',
     author: 'Wezi Khoza',
     intro:
-      'Visualisation asks you to see your next level clearly enough to begin acting toward it deliberately.',
+      'Visualisation asks you to see your next level clearly enough to move toward it.',
     questions: [
-      'When I picture my highest self at work, what do I see first?',
-      'How do I want people to describe me when I enter a room?',
-      'What parts of my identity am I ready to fully own without apology?',
-      'What does confidence look like in my face, posture and voice?',
+      'When I picture my highest self at work, what do I see?',
+      'How do I want people to describe me?',
+      'What parts of my identity am I ready to fully own?',
+      'What does confidence look like in my posture and voice?',
       'Where am I seen, heard and recognised?',
     ],
   },
@@ -646,16 +632,60 @@ const moduleContent = {
     quote: 'Fake it until there is no doubt.',
     author: 'Wezi Khoza',
     intro:
-      'This reflection asks you to examine achievement, confidence, visibility and the evidence of your own capability.',
+      'Examine achievement, confidence, evidence and visibility.',
     questions: [
-      'Which of my achievements do I struggle to internalise, and why?',
-      'How do I respond to praise or recognition?',
-      'In what ways do I compare myself to others?',
-      'What evidence proves I am qualified, capable and trusted?',
-      'What does confident visibility look like for me?',
+      'Which achievements do I struggle to internalise?',
+      'How do I respond to recognition?',
+      'How does comparison affect my confidence?',
+      'What evidence proves that I am capable and trusted?',
+      'What does confident visibility look like?',
     ],
   },
 };
+
+const imageCards = [
+  { id: 1, title: 'Leadership & Governance', symbol: '◈' },
+  { id: 2, title: 'Achievement & Success', symbol: '★' },
+  { id: 3, title: 'Knowledge & Learning', symbol: '◆' },
+  { id: 4, title: 'Innovation & Technology', symbol: '◎' },
+  { id: 5, title: 'People & Collaboration', symbol: '●' },
+  { id: 6, title: 'Health & Wellbeing', symbol: '✦' },
+  { id: 7, title: 'Growth & Possibility', symbol: '▲' },
+  { id: 8, title: 'Legacy & Impact', symbol: '◇' },
+];
+
+const differentiators = [
+  ['Authentic', '#6f946f'],
+  ['Courageous', '#d5a52f'],
+  ['Transformational', '#b86d4e'],
+  ['Bold', '#273d59'],
+  ['Purposeful', '#78638d'],
+  ['Accountable', '#537c80'],
+  ['Resilient', '#a65e5e'],
+  ['Self-Aware', '#8b795d'],
+  ['Decisive', '#416b59'],
+  ['Collaborative', '#7b6a9e'],
+  ['Confident', '#b98c31'],
+  ['Trustworthy', '#4a758b'],
+];
+
+const aligningPhrases = [
+  'Worry ends when faith begins',
+  'Set the tone',
+  'Trust your gut',
+  'Choose wisely',
+  'Courage is not the volume of your voice',
+  'Conserve your energy and know what to overlook',
+  'Plant a seed and own your legacy',
+  'Speak your truth and enjoy a liberated conscience',
+  'Make reliability a reality',
+  'Your daily routine determines your success',
+  'Embrace greatness',
+  'Dare to be different and dare to be you',
+  'Immerse yourself in your purpose',
+  'Stand by your truth',
+  'Action generates momentum',
+];
 
 const assessmentOptions = [
   'This is currently a leadership strength',
@@ -664,15 +694,6 @@ const assessmentOptions = [
   'This requires deliberate development',
   'This is a significant leadership priority',
   'I need coaching or mentor support',
-];
-
-const themeColours = [
-  '#d5a52f',
-  '#4f7f6b',
-  '#bd7047',
-  '#6577a3',
-  '#845f87',
-  '#4f7d8d',
 ];
 
 export default function ToolkitClient() {
@@ -690,134 +711,111 @@ export default function ToolkitClient() {
 
   const [answers, setAnswers] = useState({});
   const [reflections, setReflections] = useState({});
+
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedDifferentiator, setSelectedDifferentiator] = useState(null);
+  const [selectedPhrase, setSelectedPhrase] = useState(null);
+
+  const [cardMode, setCardMode] = useState('image');
+
   const [commitment, setCommitment] = useState('');
   const [deadline, setDeadline] = useState('');
   const [successEvidence, setSuccessEvidence] = useState('');
   const [savedRecords, setSavedRecords] = useState([]);
 
-  const [mentorEmail, setMentorEmail] = useState('');
   const [mentorName, setMentorName] = useState('');
-  const [mentorPermissions, setMentorPermissions] = useState({
-    wheel: true,
-    commitments: true,
-    reflections: false,
-    visionBoard: true,
-  });
+  const [mentorEmail, setMentorEmail] = useState('');
   const [mentorPrepared, setMentorPrepared] = useState(false);
 
   const theme = themes[themeIndex];
   const module = theme.modules[moduleIndex];
   const content = moduleContent[module];
 
-  const score = ratings[theme.id] || 3;
-
-  const wheelScores = useMemo(
-    () =>
-      themes.map((item) => ({
-        ...item,
-        score: ratings[item.id] || 3,
-        percentage: Math.round(((ratings[item.id] || 3) / 5) * 100),
-      })),
-    [ratings]
-  );
+  const rating = ratings[theme.id];
 
   const overallScore = useMemo(() => {
-    const values = Object.values(ratings);
+    const numbers = Object.values(ratings);
+
     return Math.round(
-      (values.reduce((total, value) => total + value, 0) /
-        (values.length * 5)) *
+      (numbers.reduce((total, item) => total + item, 0) /
+        (numbers.length * 5)) *
         100
     );
   }, [ratings]);
 
-  function selectTheme(event) {
+  function changeTheme(event) {
     setThemeIndex(Number(event.target.value));
     setModuleIndex(0);
     setAnswers({});
     setReflections({});
   }
 
-  function selectModule(event) {
+  function changeModule(event) {
     setModuleIndex(Number(event.target.value));
     setAnswers({});
     setReflections({});
   }
 
   function updateRating(value) {
-    setRatings((current) => ({
-      ...current,
+    setRatings((previous) => ({
+      ...previous,
       [theme.id]: value,
     }));
   }
 
-  function saveModule() {
+  function saveJourneyRecord() {
     const record = {
       id: Date.now(),
       theme: theme.name,
       module,
-      rating: score,
-      answers: content.questions.map((question, index) => ({
-        question,
-        assessment: answers[index] || 'Not selected',
-        reflection: reflections[index] || '',
-      })),
+      rating,
+      image: selectedImage,
+      differentiator: selectedDifferentiator,
+      phrase: selectedPhrase,
       commitment,
       deadline,
       successEvidence,
       createdAt: new Date().toLocaleString(),
     };
 
-    setSavedRecords((current) => [record, ...current]);
+    setSavedRecords((previous) => [record, ...previous]);
 
     setCommitment('');
     setDeadline('');
     setSuccessEvidence('');
   }
 
-  function prepareMentorInvite() {
-    if (!mentorEmail.trim()) return;
-    setMentorPrepared(true);
-  }
-
-  function toggleMentorPermission(name) {
-    setMentorPermissions((current) => ({
-      ...current,
-      [name]: !current[name],
-    }));
-  }
-
   return (
     <div style={styles.shell}>
-      <section style={styles.bookHeader}>
+      <section style={styles.header}>
         <div>
-          <span style={styles.goldEyebrow}>THE AUTHOR&apos;S JOURNEY</span>
+          <span style={styles.eyebrow}>INSPIRED TO SUCCEED™</span>
 
-          <h2 style={styles.mainTitle}>
-            Work through Inspired to Succeed™
+          <h2 style={styles.headerTitle}>
+            Reflection. Vision. Commitment.
           </h2>
 
-          <p style={styles.introText}>
-            This digital workspace follows the leadership themes, competency
-            reflections and vision-building philosophy of Wezi Khoza&apos;s
-            executive toolkit.
+          <p style={styles.headerText}>
+            Work through Wezi Khoza&apos;s leadership framework and turn
+            reflection into a visible personal leadership story.
           </p>
         </div>
 
-        <div style={styles.bookBadge}>
-          <span style={styles.bookBadgeSmall}>CURRENT JOURNEY</span>
-          <strong>{theme.name}</strong>
-          <span>{module}</span>
+        <div style={styles.journeyBadge}>
+          <span>MY LEADERSHIP JOURNEY</span>
+          <strong>{overallScore}%</strong>
+          <small>Current Wheel of Success</small>
         </div>
       </section>
 
-      <section style={styles.moduleWorkspace}>
-        <div style={styles.reflectionColumn}>
-          <div style={styles.selectorRow}>
+      <div style={styles.workspace}>
+        <section style={styles.mainColumn}>
+          <div style={styles.selectors}>
             <label style={styles.label}>
               Leadership theme
               <select
                 value={themeIndex}
-                onChange={selectTheme}
+                onChange={changeTheme}
                 style={styles.select}
               >
                 {themes.map((item, index) => (
@@ -832,7 +830,7 @@ export default function ToolkitClient() {
               Competency module
               <select
                 value={moduleIndex}
-                onChange={selectModule}
+                onChange={changeModule}
                 style={styles.select}
               >
                 {theme.modules.map((item, index) => (
@@ -845,29 +843,27 @@ export default function ToolkitClient() {
           </div>
 
           <div style={styles.authorCard}>
-            <span style={styles.authorCardLabel}>FROM THE TOOLKIT</span>
+            <span style={styles.eyebrow}>FROM THE TOOLKIT</span>
 
             <blockquote style={styles.quote}>
               “{content.quote}”
             </blockquote>
 
-            <strong style={styles.quoteAuthor}>{content.author}</strong>
+            <strong style={styles.author}>{content.author}</strong>
 
-            <p style={styles.moduleIntro}>{content.intro}</p>
+            <p style={styles.authorIntro}>{content.intro}</p>
           </div>
 
-          <div style={styles.ratingBlock}>
-            <div>
-              <span style={styles.smallLabel}>CURRENT SELF-RATING</span>
+          <div style={styles.ratingCard}>
+            <span style={styles.smallHeading}>CURRENT SELF-RATING</span>
 
-              <strong style={styles.ratingNumber}>{score}/5</strong>
-            </div>
+            <strong style={styles.ratingNumber}>{rating}/5</strong>
 
             <input
               type="range"
               min="1"
               max="5"
-              value={score}
+              value={rating}
               onChange={(event) =>
                 updateRating(Number(event.target.value))
               }
@@ -880,181 +876,300 @@ export default function ToolkitClient() {
             </div>
           </div>
 
-          <div style={styles.questions}>
-            {content.questions.map((question, index) => (
-              <article style={styles.questionCard} key={question}>
-                <span style={styles.questionNumber}>
-                  REFLECTION {String(index + 1).padStart(2, '0')}
-                </span>
+          {content.questions.map((question, index) => (
+            <article style={styles.questionCard} key={question}>
+              <span style={styles.questionNumber}>
+                REFLECTION {String(index + 1).padStart(2, '0')}
+              </span>
 
-                <h3 style={styles.question}>{question}</h3>
+              <h3 style={styles.question}>{question}</h3>
 
-                <label style={styles.label}>
-                  Where am I now?
-                  <select
-                    value={answers[index] || ''}
-                    onChange={(event) =>
-                      setAnswers((current) => ({
-                        ...current,
-                        [index]: event.target.value,
-                      }))
-                    }
-                    style={styles.select}
-                  >
-                    <option value="">Choose an honest assessment...</option>
+              <label style={styles.label}>
+                Where am I now?
+                <select
+                  value={answers[index] || ''}
+                  onChange={(event) =>
+                    setAnswers((previous) => ({
+                      ...previous,
+                      [index]: event.target.value,
+                    }))
+                  }
+                  style={styles.select}
+                >
+                  <option value="">Choose an honest assessment...</option>
 
-                    {assessmentOptions.map((option) => (
-                      <option value={option} key={option}>
-                        {option}
-                      </option>
-                    ))}
+                  {assessmentOptions.map((option) => (
+                    <option key={option}>{option}</option>
+                  ))}
 
-                    <option value="Other">Other / Personal assessment</option>
-                  </select>
-                </label>
+                  <option>Other / Personal assessment</option>
+                </select>
+              </label>
 
-                <label style={styles.label}>
-                  What does this mean in my own leadership?
-                  <textarea
-                    rows="4"
-                    value={reflections[index] || ''}
-                    onChange={(event) =>
-                      setReflections((current) => ({
-                        ...current,
-                        [index]: event.target.value,
-                      }))
-                    }
-                    placeholder="Reflect using your own experience, evidence, concern, aspiration or insight..."
-                    style={styles.textarea}
-                  />
-                </label>
-              </article>
-            ))}
-          </div>
-        </div>
+              <label style={styles.label}>
+                My own reflection
+                <textarea
+                  rows="3"
+                  value={reflections[index] || ''}
+                  onChange={(event) =>
+                    setReflections((previous) => ({
+                      ...previous,
+                      [index]: event.target.value,
+                    }))
+                  }
+                  placeholder="What does this mean in my own leadership context?"
+                  style={styles.textarea}
+                />
+              </label>
+            </article>
+          ))}
+        </section>
 
-        <aside style={styles.sideColumn}>
-          <div style={styles.cardJourney}>
-            <span style={styles.goldEyebrow}>VISION BOARD CONNECTION</span>
+        <aside style={styles.visionStudio}>
+          <span style={styles.eyebrow}>VISION BOARD STUDIO</span>
 
-            <h3 style={styles.sideTitle}>
-              Turn reflection into a visual leadership story
-            </h3>
+          <h2 style={styles.visionTitle}>
+            Build my leadership story
+          </h2>
 
-            <p style={styles.sideText}>
-              Your next step is to connect this reflection to Wezi&apos;s
-              original card decks.
-            </p>
+          <p style={styles.sideText}>
+            Connect what the book has awakened in you to an image, a leadership
+            differentiator and an aligning phrase.
+          </p>
 
-            <div style={styles.cardStep}>
-              <span style={styles.cardStepNumber}>01</span>
-              <div>
-                <strong>Image Card</strong>
-                <p>Choose the image that represents what you see.</p>
-              </div>
-            </div>
-
-            <div style={styles.cardStep}>
-              <span style={styles.cardStepNumber}>02</span>
-              <div>
-                <strong>Differentiator Card</strong>
-                <p>Choose who you need to become.</p>
-              </div>
-            </div>
-
-            <div style={styles.cardStep}>
-              <span style={styles.cardStepNumber}>03</span>
-              <div>
-                <strong>Aligning Phrase</strong>
-                <p>Choose the thought that will guide your action.</p>
-              </div>
-            </div>
-
-            <div style={styles.comingSoon}>
-              Original cards will appear here in their supplied colours in our
-              next file step.
-            </div>
-          </div>
-
-          <div style={styles.mentorCard}>
-            <span style={styles.goldEyebrow}>MENTOR CONNECTION</span>
-
-            <h3 style={styles.sideTitle}>Invite an outside mentor</h3>
-
-            <p style={styles.sideText}>
-              Decide what your mentor may see. Your private material should
-              remain under your control.
-            </p>
-
-            <input
-              value={mentorName}
-              onChange={(event) => setMentorName(event.target.value)}
-              placeholder="Mentor name"
-              style={styles.input}
-            />
-
-            <input
-              value={mentorEmail}
-              onChange={(event) => {
-                setMentorEmail(event.target.value);
-                setMentorPrepared(false);
+          <div style={styles.tabs}>
+            <button
+              type="button"
+              onClick={() => setCardMode('image')}
+              style={{
+                ...styles.tab,
+                ...(cardMode === 'image' ? styles.activeTab : {}),
               }}
-              placeholder="Mentor email address"
-              type="email"
-              style={styles.input}
-            />
-
-            <div style={styles.permissionList}>
-              {[
-                ['wheel', 'Wheel of Success'],
-                ['commitments', 'Leadership commitments'],
-                ['reflections', 'Selected reflections'],
-                ['visionBoard', 'Vision Board'],
-              ].map(([key, label]) => (
-                <label style={styles.permission} key={key}>
-                  <input
-                    type="checkbox"
-                    checked={mentorPermissions[key]}
-                    onChange={() => toggleMentorPermission(key)}
-                  />
-                  <span>{label}</span>
-                </label>
-              ))}
-            </div>
+            >
+              01 Image
+            </button>
 
             <button
               type="button"
-              style={styles.darkButton}
-              onClick={prepareMentorInvite}
+              onClick={() => setCardMode('differentiator')}
+              style={{
+                ...styles.tab,
+                ...(cardMode === 'differentiator'
+                  ? styles.activeTab
+                  : {}),
+              }}
             >
-              Prepare mentor invitation
+              02 Differentiator
             </button>
 
-            {mentorPrepared && (
-              <div style={styles.successBox}>
-                <strong>Mentor invitation prepared.</strong>
-                <p style={{ marginBottom: 0 }}>
-                  {mentorName || 'Your mentor'} will be invited to view only
-                  the areas you selected. Secure email delivery will be
-                  connected when authentication is added.
-                </p>
+            <button
+              type="button"
+              onClick={() => setCardMode('phrase')}
+              style={{
+                ...styles.tab,
+                ...(cardMode === 'phrase' ? styles.activeTab : {}),
+              }}
+            >
+              03 Phrase
+            </button>
+          </div>
+
+          {cardMode === 'image' && (
+            <div>
+              <h3 style={styles.cardInstruction}>
+                Which image represents what you see?
+              </h3>
+
+              <div style={styles.imageGrid}>
+                {imageCards.map((card) => {
+                  const active = selectedImage?.id === card.id;
+
+                  return (
+                    <button
+                      key={card.id}
+                      type="button"
+                      onClick={() => setSelectedImage(card)}
+                      style={{
+                        ...styles.imageCard,
+                        ...(active ? styles.selectedCard : {}),
+                      }}
+                    >
+                      <span style={styles.imageSymbol}>
+                        {card.symbol}
+                      </span>
+
+                      <strong>{card.title}</strong>
+
+                      <small>
+                        {active ? 'Selected ✓' : 'Select'}
+                      </small>
+                    </button>
+                  );
+                })}
               </div>
+
+              <p style={styles.assetNote}>
+                The original Wezi photographs will replace these visual
+                placeholders when we upload the supplied image assets.
+              </p>
+            </div>
+          )}
+
+          {cardMode === 'differentiator' && (
+            <div>
+              <h3 style={styles.cardInstruction}>
+                Who do I need to become?
+              </h3>
+
+              <div style={styles.differentiatorGrid}>
+                {differentiators.map(([name, colour]) => {
+                  const active =
+                    selectedDifferentiator?.name === name;
+
+                  return (
+                    <button
+                      key={name}
+                      type="button"
+                      onClick={() =>
+                        setSelectedDifferentiator({
+                          name,
+                          colour,
+                        })
+                      }
+                      style={{
+                        ...styles.differentiator,
+                        background: colour,
+                        outline: active
+                          ? '4px solid #d6a42b'
+                          : 'none',
+                      }}
+                    >
+                      <strong>{name}</strong>
+
+                      <span>
+                        {active ? 'Selected ✓' : 'Choose'}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {cardMode === 'phrase' && (
+            <div>
+              <h3 style={styles.cardInstruction}>
+                Which thought should guide my action?
+              </h3>
+
+              <div style={styles.phraseList}>
+                {aligningPhrases.map((phrase) => {
+                  const active = selectedPhrase === phrase;
+
+                  return (
+                    <button
+                      key={phrase}
+                      type="button"
+                      onClick={() => setSelectedPhrase(phrase)}
+                      style={{
+                        ...styles.phraseCard,
+                        ...(active
+                          ? styles.selectedPhrase
+                          : {}),
+                      }}
+                    >
+                      <span>“{phrase}”</span>
+
+                      <small>
+                        {active ? 'Selected ✓' : 'Choose this phrase'}
+                      </small>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          <div style={styles.board}>
+            <span style={styles.eyebrow}>MY VISION BOARD</span>
+
+            <h3 style={styles.boardTitle}>
+              The leader I am becoming
+            </h3>
+
+            {!selectedImage &&
+            !selectedDifferentiator &&
+            !selectedPhrase ? (
+              <p style={styles.emptyText}>
+                Select your three cards above. They will assemble here.
+              </p>
+            ) : (
+              <div style={styles.boardItems}>
+                {selectedImage && (
+                  <div style={styles.boardImage}>
+                    <span style={styles.boardSymbol}>
+                      {selectedImage.symbol}
+                    </span>
+                    <strong>{selectedImage.title}</strong>
+                  </div>
+                )}
+
+                {selectedDifferentiator && (
+                  <div
+                    style={{
+                      ...styles.boardDifferentiator,
+                      background:
+                        selectedDifferentiator.colour,
+                    }}
+                  >
+                    <small>I WILL BE</small>
+                    <strong>
+                      {selectedDifferentiator.name}
+                    </strong>
+                  </div>
+                )}
+
+                {selectedPhrase && (
+                  <div style={styles.boardPhrase}>
+                    <small>MY ALIGNING THOUGHT</small>
+                    <strong>“{selectedPhrase}”</strong>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {(selectedImage ||
+              selectedDifferentiator ||
+              selectedPhrase) && (
+              <button
+                type="button"
+                onClick={() => {
+                  setSelectedImage(null);
+                  setSelectedDifferentiator(null);
+                  setSelectedPhrase(null);
+                }}
+                style={styles.clearButton}
+              >
+                Clear selections
+              </button>
             )}
           </div>
         </aside>
-      </section>
+      </div>
 
       <section style={styles.commitmentSection}>
-        <div style={styles.commitmentIntro}>
-          <span style={styles.goldEyebrow}>DISCIPLINED COMMITMENT</span>
+        <div>
+          <span style={styles.eyebrow}>
+            DISCIPLINED COMMITMENT
+          </span>
 
           <h2 style={styles.commitmentTitle}>
             What will change because of this reflection?
           </h2>
 
-          <p style={styles.commitmentText}>
-            The vision board is not the end of the process. Turn insight into
-            an action you can review with yourself or your mentor.
+          <p style={styles.commitmentDescription}>
+            Turn the book, your reflection and your chosen cards into one
+            deliberate leadership action.
           </p>
         </div>
 
@@ -1064,156 +1179,158 @@ export default function ToolkitClient() {
             <textarea
               rows="4"
               value={commitment}
-              onChange={(event) => setCommitment(event.target.value)}
+              onChange={(event) =>
+                setCommitment(event.target.value)
+              }
               placeholder="I commit to..."
               style={styles.textarea}
             />
           </label>
 
-          <div style={styles.selectorRow}>
-            <label style={styles.label}>
-              By when?
-              <input
-                value={deadline}
-                onChange={(event) => setDeadline(event.target.value)}
-                placeholder="Example: 30 September"
-                style={styles.input}
-              />
-            </label>
+          <label style={styles.label}>
+            By when?
+            <input
+              value={deadline}
+              onChange={(event) =>
+                setDeadline(event.target.value)
+              }
+              placeholder="Example: 30 September"
+              style={styles.input}
+            />
+          </label>
 
-            <label style={styles.label}>
-              What will prove success?
-              <input
-                value={successEvidence}
-                onChange={(event) =>
-                  setSuccessEvidence(event.target.value)
-                }
-                placeholder="Evidence or observable result"
-                style={styles.input}
-              />
-            </label>
-          </div>
+          <label style={styles.label}>
+            What will prove success?
+            <input
+              value={successEvidence}
+              onChange={(event) =>
+                setSuccessEvidence(event.target.value)
+              }
+              placeholder="Evidence or observable result"
+              style={styles.input}
+            />
+          </label>
 
           <button
             type="button"
-            onClick={saveModule}
+            onClick={saveJourneyRecord}
             style={styles.goldButton}
           >
-            Save reflection & commitment
+            Save to my leadership journey
           </button>
         </div>
       </section>
 
-      <section style={styles.wheelSection}>
-        <div style={styles.wheelIntro}>
-          <span style={styles.goldEyebrow}>MY LEADERSHIP PORTRAIT</span>
+      <section style={styles.mentorSection}>
+        <div>
+          <span style={styles.eyebrow}>MENTOR CONNECTION</span>
 
-          <h2 style={styles.wheelTitle}>
-            Inspired to Succeed™ Wheel of Success
+          <h2 style={styles.mentorTitle}>
+            Invite someone into my growth journey
           </h2>
 
-          <p style={styles.introText}>
-            Your ratings across the six themes create a living visual picture
-            of your leadership development.
+          <p style={styles.sideText}>
+            You will decide what a mentor can see. Private reflections remain
+            private unless you choose to share them.
           </p>
         </div>
 
-        <div style={styles.wheelLayout}>
-          <div style={styles.wheelWrap}>
-            <div
-              style={{
-                ...styles.wheel,
-                background: `conic-gradient(
-                  ${themeColours[0]} 0deg 60deg,
-                  ${themeColours[1]} 60deg 120deg,
-                  ${themeColours[2]} 120deg 180deg,
-                  ${themeColours[3]} 180deg 240deg,
-                  ${themeColours[4]} 240deg 300deg,
-                  ${themeColours[5]} 300deg 360deg
-                )`,
-              }}
-            >
-              <div style={styles.wheelCentre}>
-                <span style={styles.wheelCentreSmall}>
-                  LEADERSHIP
-                </span>
+        <div style={styles.mentorForm}>
+          <input
+            value={mentorName}
+            onChange={(event) =>
+              setMentorName(event.target.value)
+            }
+            placeholder="Mentor name"
+            style={styles.input}
+          />
 
-                <strong style={styles.wheelCentreScore}>
-                  {overallScore}%
-                </strong>
+          <input
+            type="email"
+            value={mentorEmail}
+            onChange={(event) => {
+              setMentorEmail(event.target.value);
+              setMentorPrepared(false);
+            }}
+            placeholder="Mentor email address"
+            style={styles.input}
+          />
 
-                <span style={styles.wheelCentreSmall}>
-                  OVERALL
-                </span>
-              </div>
+          <button
+            type="button"
+            onClick={() =>
+              mentorEmail.trim() &&
+              setMentorPrepared(true)
+            }
+            style={styles.darkButton}
+          >
+            Prepare mentor invitation
+          </button>
+
+          {mentorPrepared && (
+            <div style={styles.success}>
+              Invitation prepared for{' '}
+              <strong>
+                {mentorName || mentorEmail}
+              </strong>
+              . Secure delivery will be connected when authentication is
+              activated.
             </div>
-          </div>
-
-          <div style={styles.scoreList}>
-            {wheelScores.map((item, index) => (
-              <div style={styles.scoreRow} key={item.id}>
-                <span
-                  style={{
-                    ...styles.scoreDot,
-                    background: themeColours[index],
-                  }}
-                />
-
-                <div style={styles.scoreCopy}>
-                  <strong>{item.name}</strong>
-
-                  <div style={styles.progressTrack}>
-                    <span
-                      style={{
-                        ...styles.progressFill,
-                        width: `${item.percentage}%`,
-                        background: themeColours[index],
-                      }}
-                    />
-                  </div>
-                </div>
-
-                <strong style={styles.scorePercent}>
-                  {item.percentage}%
-                </strong>
-              </div>
-            ))}
-          </div>
+          )}
         </div>
       </section>
 
       <section style={styles.savedSection}>
-        <span style={styles.goldEyebrow}>MY GROWTH RECORD</span>
+        <span style={styles.eyebrow}>
+          MY LEADERSHIP EVIDENCE
+        </span>
 
-        <h2 style={styles.savedTitle}>Saved leadership evidence</h2>
+        <h2 style={styles.savedHeading}>
+          Saved journey moments
+        </h2>
 
         {savedRecords.length === 0 ? (
-          <div style={styles.emptyState}>
-            Complete your first reflection and commitment. It will become part
-            of your leadership journey here.
-          </div>
+          <p style={styles.emptyState}>
+            Nothing has been saved yet. Complete a reflection, select your
+            cards and make a commitment.
+          </p>
         ) : (
           <div style={styles.savedGrid}>
             {savedRecords.map((record) => (
-              <article style={styles.savedCard} key={record.id}>
-                <span style={styles.savedTheme}>{record.theme}</span>
+              <article
+                style={styles.savedCard}
+                key={record.id}
+              >
+                <small style={styles.savedTheme}>
+                  {record.theme}
+                </small>
 
-                <h3 style={{ margin: '8px 0' }}>{record.module}</h3>
+                <h3>{record.module}</h3>
 
-                <span style={styles.savedDate}>{record.createdAt}</span>
+                <p>
+                  Self-rating:{' '}
+                  <strong>{record.rating}/5</strong>
+                </p>
 
-                <div style={styles.savedRating}>
-                  Self-rating: <strong>{record.rating}/5</strong>
-                </div>
+                {record.differentiator && (
+                  <p>
+                    Leadership identity:{' '}
+                    <strong>
+                      {record.differentiator.name}
+                    </strong>
+                  </p>
+                )}
+
+                {record.phrase && (
+                  <blockquote style={styles.savedQuote}>
+                    “{record.phrase}”
+                  </blockquote>
+                )}
 
                 {record.commitment && (
                   <div style={styles.savedCommitment}>
-                    <span style={styles.smallLabel}>MY COMMITMENT</span>
+                    <small>MY COMMITMENT</small>
                     <p>{record.commitment}</p>
-
-                    {record.deadline && (
-                      <small>Review by: {record.deadline}</small>
-                    )}
                   </div>
                 )}
               </article>
@@ -1231,496 +1348,492 @@ const styles = {
     gap: '28px',
   },
 
-  bookHeader: {
+  header: {
     display: 'flex',
     justifyContent: 'space-between',
     gap: '28px',
-    alignItems: 'center',
-    padding: '28px',
+    padding: '30px',
     borderRadius: '22px',
     background:
-      'linear-gradient(135deg, #181714 0%, #292318 100%)',
+      'linear-gradient(135deg,#171611,#292217)',
     color: '#fff',
   },
 
-  goldEyebrow: {
+  eyebrow: {
     display: 'block',
+    color: '#d6a42b',
+    letterSpacing: '.16em',
     fontSize: '11px',
     fontWeight: 900,
-    letterSpacing: '0.16em',
-    color: '#d7a52e',
-    marginBottom: '9px',
+    marginBottom: '10px',
   },
 
-  mainTitle: {
-    fontFamily: 'Georgia, serif',
-    fontSize: '36px',
-    margin: '0 0 10px',
+  headerTitle: {
+    margin: 0,
+    fontFamily: 'Georgia,serif',
+    fontSize: '38px',
   },
 
-  introText: {
+  headerText: {
+    maxWidth: '700px',
     lineHeight: 1.65,
-    color: '#6e675f',
-    maxWidth: '720px',
+    color: 'rgba(255,255,255,.68)',
   },
 
-  bookBadge: {
-    minWidth: '230px',
+  journeyBadge: {
     display: 'grid',
-    gap: '6px',
+    textAlign: 'center',
+    placeContent: 'center',
+    minWidth: '190px',
     padding: '20px',
-    borderRadius: '16px',
+    border: '1px solid rgba(255,255,255,.14)',
+    borderRadius: '18px',
     background: 'rgba(255,255,255,.07)',
-    border: '1px solid rgba(255,255,255,.12)',
   },
 
-  bookBadgeSmall: {
-    fontSize: '10px',
-    letterSpacing: '.13em',
-    color: '#d7a52e',
-  },
-
-  moduleWorkspace: {
+  workspace: {
     display: 'grid',
-    gridTemplateColumns: 'minmax(0, 1.6fr) minmax(300px, .75fr)',
+    gridTemplateColumns:
+      'minmax(0,1.45fr) minmax(360px,.7fr)',
     gap: '24px',
     alignItems: 'start',
   },
 
-  reflectionColumn: {
-    padding: '26px',
-    background: '#fff',
-    border: '1px solid #e6ddd1',
-    borderRadius: '22px',
+  mainColumn: {
+    display: 'grid',
+    gap: '18px',
   },
 
-  sideColumn: {
+  selectors: {
     display: 'grid',
-    gap: '20px',
-  },
-
-  selectorRow: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-    gap: '14px',
+    gridTemplateColumns:
+      'repeat(auto-fit,minmax(220px,1fr))',
+    gap: '15px',
   },
 
   label: {
     display: 'grid',
     gap: '8px',
-    fontSize: '12px',
+    fontSize: '13px',
     fontWeight: 800,
-    marginBottom: '16px',
   },
 
   select: {
     width: '100%',
-    minHeight: '46px',
+    minHeight: '48px',
+    border: '1px solid #ded4c5',
+    borderRadius: '11px',
     padding: '0 12px',
-    border: '1px solid #ded5c8',
-    borderRadius: '10px',
     background: '#fff',
     font: 'inherit',
   },
 
-  input: {
-    width: '100%',
-    minHeight: '46px',
-    padding: '0 12px',
-    border: '1px solid #ded5c8',
-    borderRadius: '10px',
-    boxSizing: 'border-box',
-    font: 'inherit',
-    marginBottom: '12px',
-  },
-
   textarea: {
     width: '100%',
-    padding: '12px',
-    border: '1px solid #ded5c8',
-    borderRadius: '10px',
     boxSizing: 'border-box',
+    border: '1px solid #ddd3c4',
+    borderRadius: '11px',
+    padding: '13px',
+    font: 'inherit',
     resize: 'vertical',
+  },
+
+  input: {
+    width: '100%',
+    minHeight: '48px',
+    boxSizing: 'border-box',
+    border: '1px solid #ddd3c4',
+    borderRadius: '11px',
+    padding: '0 13px',
     font: 'inherit',
   },
 
   authorCard: {
-    margin: '22px 0',
-    padding: '26px',
-    borderRadius: '18px',
-    background: '#181714',
+    padding: '28px',
+    borderRadius: '20px',
+    background: '#171611',
     color: '#fff',
   },
 
-  authorCardLabel: {
-    color: '#d7a52e',
-    fontSize: '10px',
-    letterSpacing: '.15em',
-    fontWeight: 900,
-  },
-
   quote: {
-    margin: '18px 0 8px',
-    fontFamily: 'Georgia, serif',
-    fontSize: '25px',
+    fontFamily: 'Georgia,serif',
+    fontSize: '27px',
     lineHeight: 1.4,
+    margin: '15px 0',
   },
 
-  quoteAuthor: {
-    color: '#d7a52e',
-    fontSize: '12px',
+  author: {
+    color: '#d6a42b',
   },
 
-  moduleIntro: {
+  authorIntro: {
     color: 'rgba(255,255,255,.68)',
-    lineHeight: 1.6,
-    marginTop: '18px',
+    lineHeight: 1.65,
   },
 
-  ratingBlock: {
-    padding: '20px',
-    borderRadius: '16px',
-    background: '#f6f2eb',
-    marginBottom: '22px',
+  ratingCard: {
+    padding: '22px',
+    borderRadius: '17px',
+    background: '#f4efe6',
   },
 
-  smallLabel: {
-    display: 'block',
+  smallHeading: {
     fontSize: '10px',
+    letterSpacing: '.14em',
+    color: '#956d17',
     fontWeight: 900,
-    letterSpacing: '.12em',
-    color: '#8c6b24',
   },
 
   ratingNumber: {
     display: 'block',
-    fontSize: '28px',
-    marginTop: '4px',
+    fontSize: '30px',
+    margin: '6px 0 14px',
   },
 
   slider: {
     width: '100%',
-    margin: '16px 0 6px',
   },
 
   ratingLabels: {
     display: 'flex',
     justifyContent: 'space-between',
+    marginTop: '7px',
+    color: '#756e65',
     fontSize: '11px',
-    color: '#877f76',
-  },
-
-  questions: {
-    display: 'grid',
-    gap: '14px',
   },
 
   questionCard: {
-    padding: '20px',
-    borderRadius: '15px',
-    border: '1px solid #e8dfd3',
+    padding: '22px',
+    border: '1px solid #e7ddd0',
+    borderRadius: '17px',
     background: '#fffdfa',
   },
 
   questionNumber: {
+    color: '#986e12',
     fontSize: '10px',
+    letterSpacing: '.14em',
     fontWeight: 900,
-    letterSpacing: '.13em',
-    color: '#a57918',
   },
 
   question: {
-    fontSize: '17px',
     lineHeight: 1.5,
+    marginBottom: '18px',
   },
 
-  cardJourney: {
-    padding: '24px',
+  visionStudio: {
+    padding: '26px',
+    borderRadius: '22px',
     background: '#fff',
-    border: '1px solid #e6ddd1',
-    borderRadius: '20px',
+    border: '1px solid #e5dbce',
   },
 
-  mentorCard: {
-    padding: '24px',
-    background: '#f2eadc',
-    border: '1px solid #dfcfb5',
-    borderRadius: '20px',
-  },
-
-  sideTitle: {
-    fontFamily: 'Georgia, serif',
-    fontSize: '25px',
+  visionTitle: {
+    fontFamily: 'Georgia,serif',
+    fontSize: '31px',
     margin: '0 0 10px',
   },
 
   sideText: {
-    color: '#70685f',
-    lineHeight: 1.6,
+    color: '#6e675f',
+    lineHeight: 1.65,
   },
 
-  cardStep: {
-    display: 'flex',
-    gap: '13px',
-    marginTop: '16px',
-    paddingTop: '16px',
-    borderTop: '1px solid #eee6da',
+  tabs: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3,1fr)',
+    gap: '6px',
+    margin: '22px 0',
   },
 
-  cardStepNumber: {
+  tab: {
+    border: '1px solid #ddd3c4',
+    background: '#f5f0e7',
+    padding: '11px 7px',
+    borderRadius: '9px',
+    cursor: 'pointer',
+    fontWeight: 800,
+    fontSize: '11px',
+  },
+
+  activeTab: {
+    background: '#d6a42b',
+    borderColor: '#d6a42b',
+  },
+
+  cardInstruction: {
+    fontFamily: 'Georgia,serif',
+    fontSize: '21px',
+  },
+
+  imageGrid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(2,1fr)',
+    gap: '10px',
+  },
+
+  imageCard: {
+    minHeight: '130px',
+    padding: '15px',
+    borderRadius: '14px',
+    border: '1px solid #dfd5c6',
+    background: '#f6f1e8',
+    cursor: 'pointer',
+    display: 'grid',
+    gap: '7px',
+    textAlign: 'left',
+  },
+
+  imageSymbol: {
+    fontSize: '28px',
+    color: '#b5841e',
+  },
+
+  selectedCard: {
+    border: '2px solid #d6a42b',
+    boxShadow: '0 8px 22px rgba(214,164,43,.18)',
+  },
+
+  assetNote: {
+    color: '#8a8175',
+    fontSize: '11px',
+    lineHeight: 1.5,
+    marginTop: '12px',
+  },
+
+  differentiatorGrid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(2,1fr)',
+    gap: '10px',
+  },
+
+  differentiator: {
+    minHeight: '90px',
+    border: 0,
+    borderRadius: '13px',
+    padding: '14px',
+    cursor: 'pointer',
+    display: 'grid',
+    alignContent: 'space-between',
+    textAlign: 'left',
+    color: '#fff',
+  },
+
+  phraseList: {
+    display: 'grid',
+    gap: '9px',
+    maxHeight: '480px',
+    overflowY: 'auto',
+  },
+
+  phraseCard: {
+    background: '#111',
+    color: '#fff',
+    border: '1px solid #2f2f2f',
+    borderRadius: '12px',
+    padding: '17px',
+    cursor: 'pointer',
+    textAlign: 'left',
+    display: 'grid',
+    gap: '10px',
+    lineHeight: 1.5,
+  },
+
+  selectedPhrase: {
+    border: '2px solid #d6a42b',
+    boxShadow: '0 6px 18px rgba(214,164,43,.25)',
+  },
+
+  board: {
+    marginTop: '28px',
+    padding: '20px',
+    borderRadius: '17px',
+    background: '#f4efe6',
+  },
+
+  boardTitle: {
+    fontFamily: 'Georgia,serif',
+    fontSize: '23px',
+  },
+
+  emptyText: {
+    color: '#81786e',
+    lineHeight: 1.5,
+  },
+
+  boardItems: {
+    display: 'grid',
+    gap: '10px',
+  },
+
+  boardImage: {
+    minHeight: '110px',
     display: 'grid',
     placeItems: 'center',
-    width: '34px',
-    height: '34px',
-    borderRadius: '50%',
-    background: '#d7a52e',
-    fontSize: '11px',
-    fontWeight: 900,
-    flex: '0 0 auto',
+    textAlign: 'center',
+    borderRadius: '13px',
+    background:
+      'linear-gradient(135deg,#e8dcc6,#f9f6ef)',
   },
 
-  comingSoon: {
-    marginTop: '18px',
-    padding: '13px',
-    borderRadius: '10px',
-    background: '#181714',
-    color: '#e7d6b1',
-    fontSize: '12px',
-    lineHeight: 1.5,
+  boardSymbol: {
+    fontSize: '35px',
+    color: '#af7b15',
   },
 
-  permissionList: {
-    display: 'grid',
-    gap: '9px',
-    margin: '14px 0 18px',
-  },
-
-  permission: {
-    display: 'flex',
-    gap: '9px',
-    alignItems: 'center',
-    fontSize: '13px',
-  },
-
-  darkButton: {
-    width: '100%',
-    minHeight: '46px',
-    border: 0,
-    borderRadius: '10px',
-    background: '#181714',
+  boardDifferentiator: {
+    padding: '18px',
+    borderRadius: '13px',
     color: '#fff',
-    fontWeight: 800,
-    cursor: 'pointer',
+    display: 'grid',
+    gap: '4px',
   },
 
-  successBox: {
-    marginTop: '14px',
-    padding: '14px',
-    borderRadius: '10px',
-    background: '#e5f1e7',
-    color: '#315b3b',
-    fontSize: '12px',
-    lineHeight: 1.5,
+  boardPhrase: {
+    padding: '18px',
+    borderRadius: '13px',
+    background: '#111',
+    color: '#fff',
+    display: 'grid',
+    gap: '7px',
+  },
+
+  clearButton: {
+    marginTop: '13px',
+    border: 0,
+    background: 'transparent',
+    textDecoration: 'underline',
+    cursor: 'pointer',
   },
 
   commitmentSection: {
     display: 'grid',
-    gridTemplateColumns: 'minmax(0, .8fr) minmax(0, 1.2fr)',
-    gap: '30px',
+    gridTemplateColumns:
+      'minmax(0,.8fr) minmax(0,1.2fr)',
+    gap: '28px',
     padding: '30px',
     borderRadius: '22px',
     background: '#211c15',
     color: '#fff',
   },
 
-  commitmentIntro: {},
-
   commitmentTitle: {
-    fontFamily: 'Georgia, serif',
-    fontSize: '34px',
-    margin: '0 0 12px',
+    fontFamily: 'Georgia,serif',
+    fontSize: '35px',
   },
 
-  commitmentText: {
-    color: 'rgba(255,255,255,.65)',
+  commitmentDescription: {
+    color: 'rgba(255,255,255,.68)',
     lineHeight: 1.65,
   },
 
   commitmentForm: {
+    display: 'grid',
+    gap: '14px',
     padding: '22px',
-    borderRadius: '16px',
     background: '#fff',
-    color: '#26221c',
+    color: '#211c15',
+    borderRadius: '17px',
   },
 
   goldButton: {
-    width: '100%',
     minHeight: '48px',
     border: 0,
     borderRadius: '10px',
-    background: '#d7a52e',
-    color: '#19150e',
+    background: '#d6a42b',
+    color: '#17130c',
     fontWeight: 900,
     cursor: 'pointer',
   },
 
-  wheelSection: {
-    padding: '30px',
-    border: '1px solid #e5ddd1',
+  mentorSection: {
+    display: 'grid',
+    gridTemplateColumns:
+      'minmax(0,1fr) minmax(0,1fr)',
+    gap: '28px',
+    padding: '28px',
     borderRadius: '22px',
-    background: '#fff',
+    background: '#f2eadc',
   },
 
-  wheelIntro: {
-    marginBottom: '26px',
+  mentorTitle: {
+    fontFamily: 'Georgia,serif',
+    fontSize: '31px',
   },
 
-  wheelTitle: {
-    fontFamily: 'Georgia, serif',
-    fontSize: '38px',
-    margin: '0 0 10px',
-  },
-
-  wheelLayout: {
+  mentorForm: {
     display: 'grid',
-    gridTemplateColumns: 'minmax(260px, .7fr) minmax(0, 1.3fr)',
-    gap: '42px',
-    alignItems: 'center',
-  },
-
-  wheelWrap: {
-    display: 'grid',
-    placeItems: 'center',
-  },
-
-  wheel: {
-    width: '280px',
-    height: '280px',
-    borderRadius: '50%',
-    display: 'grid',
-    placeItems: 'center',
-    boxShadow: '0 18px 50px rgba(0,0,0,.12)',
-  },
-
-  wheelCentre: {
-    width: '150px',
-    height: '150px',
-    borderRadius: '50%',
-    background: '#181714',
-    display: 'grid',
-    placeItems: 'center',
-    alignContent: 'center',
-    color: '#fff',
-    textAlign: 'center',
-  },
-
-  wheelCentreSmall: {
-    fontSize: '9px',
-    letterSpacing: '.14em',
-    color: '#d7a52e',
-  },
-
-  wheelCentreScore: {
-    fontSize: '35px',
-    lineHeight: 1.1,
-    margin: '5px 0',
-  },
-
-  scoreList: {
-    display: 'grid',
-    gap: '16px',
-  },
-
-  scoreRow: {
-    display: 'grid',
-    gridTemplateColumns: '16px 1fr 52px',
     gap: '12px',
-    alignItems: 'center',
   },
 
-  scoreDot: {
-    width: '12px',
-    height: '12px',
-    borderRadius: '50%',
+  darkButton: {
+    minHeight: '48px',
+    border: 0,
+    borderRadius: '10px',
+    background: '#181714',
+    color: '#fff',
+    fontWeight: 800,
+    cursor: 'pointer',
   },
 
-  scoreCopy: {
-    display: 'grid',
-    gap: '7px',
-    fontSize: '13px',
-  },
-
-  progressTrack: {
-    height: '7px',
-    borderRadius: '999px',
-    background: '#eee9e2',
-    overflow: 'hidden',
-  },
-
-  progressFill: {
-    display: 'block',
-    height: '100%',
-    borderRadius: '999px',
-  },
-
-  scorePercent: {
-    textAlign: 'right',
-    fontSize: '13px',
+  success: {
+    padding: '14px',
+    borderRadius: '10px',
+    background: '#e3f1e4',
+    color: '#315c39',
+    lineHeight: 1.5,
   },
 
   savedSection: {
-    padding: '30px',
+    padding: '28px',
     borderRadius: '22px',
-    background: '#f4efe7',
+    background: '#f5f0e8',
   },
 
-  savedTitle: {
-    fontFamily: 'Georgia, serif',
+  savedHeading: {
+    fontFamily: 'Georgia,serif',
     fontSize: '32px',
-    margin: '0 0 20px',
   },
 
   emptyState: {
-    padding: '20px',
-    borderRadius: '12px',
+    padding: '18px',
+    borderRadius: '11px',
     background: '#fff',
-    color: '#776f66',
+    color: '#746c62',
   },
 
   savedGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-    gap: '14px',
+    gridTemplateColumns:
+      'repeat(auto-fit,minmax(240px,1fr))',
+    gap: '13px',
   },
 
   savedCard: {
-    background: '#fff',
     padding: '18px',
+    border: '1px solid #e3d9ca',
     borderRadius: '14px',
-    border: '1px solid #e4dbcf',
+    background: '#fff',
   },
 
   savedTheme: {
-    color: '#9b731b',
-    fontSize: '10px',
+    color: '#946b16',
     fontWeight: 900,
-    letterSpacing: '.1em',
   },
 
-  savedDate: {
-    color: '#8a8178',
-    fontSize: '11px',
-  },
-
-  savedRating: {
-    marginTop: '12px',
-    fontSize: '13px',
+  savedQuote: {
+    margin: '12px 0',
+    padding: '12px',
+    borderRadius: '9px',
+    background: '#111',
+    color: '#fff',
+    fontFamily: 'Georgia,serif',
   },
 
   savedCommitment: {
-    marginTop: '15px',
-    padding: '13px',
-    borderRadius: '10px',
-    background: '#f5f0e8',
+    marginTop: '12px',
+    padding: '12px',
+    borderRadius: '9px',
+    background: '#f2ede5',
   },
 };
