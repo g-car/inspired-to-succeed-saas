@@ -126,7 +126,10 @@ const phraseCards = [
 
 const visionCards = Array.from({ length: 40 }, (_, index) => ({
   id: index + 1,
-  src: `/wezi_vision_cards/vision-card-${String(index + 1).padStart(2, '0')}.webp`,
+  src: `/wezi_vision_cards/vision-card-${String(index + 1).padStart(
+    2,
+    '0'
+  )}.webp`,
 }));
 
 export default function VisionBoardPage() {
@@ -178,9 +181,7 @@ export default function VisionBoardPage() {
           ← Back to Toolkit
         </Link>
 
-        <span style={styles.eyebrow}>
-          02 · VISION BOARD
-        </span>
+        <span style={styles.eyebrow}>02 · VISION BOARD</span>
 
         <h1 style={styles.heroTitle}>
           Build the leader you can already see.
@@ -200,9 +201,7 @@ export default function VisionBoardPage() {
       <section style={styles.section}>
         <span style={styles.step}>STEP 1</span>
 
-        <h2 style={styles.title}>
-          Who do I need to become?
-        </h2>
+        <h2 style={styles.title}>Who do I need to become?</h2>
 
         <p style={styles.intro}>
           Select the leadership differentiator that most clearly describes
@@ -264,9 +263,7 @@ export default function VisionBoardPage() {
       <section style={styles.section}>
         <span style={styles.step}>STEP 3</span>
 
-        <h2 style={styles.title}>
-          What does my future look like?
-        </h2>
+        <h2 style={styles.title}>What does my future look like?</h2>
 
         <p style={styles.intro}>
           Browse the original image cards and choose up to six images that
@@ -277,9 +274,7 @@ export default function VisionBoardPage() {
         <div style={styles.counter}>
           <strong>{selectedImages.length} of 6 selected</strong>
 
-          {selectedImages.length === 6 && (
-            <span>Maximum reached</span>
-          )}
+          {selectedImages.length === 6 && <span>Maximum reached</span>}
         </div>
 
         <div style={styles.imageGrid}>
@@ -323,9 +318,7 @@ export default function VisionBoardPage() {
       </section>
 
       <section style={styles.futureBoardSection}>
-        <span style={styles.stepGold}>
-          MY FUTURE BOARD
-        </span>
+        <span style={styles.stepGold}>MY FUTURE BOARD</span>
 
         <h2 style={styles.futureBoardTitle}>
           The future I am choosing
@@ -468,14 +461,15 @@ export default function VisionBoardPage() {
 
             <span>
               You have identified who you want to become, what will guide you
-              and the future you want to make visible.
+              and the future you want to make visible. Your next step is to
+              assess yourself across the six leadership themes.
             </span>
 
             <Link
-              href="/toolkit/ideal-state"
+              href="/toolkit/assessment"
               style={styles.nextButton}
             >
-              Continue to Ideal State →
+              Continue to Leadership Assessment →
             </Link>
           </div>
         )}
