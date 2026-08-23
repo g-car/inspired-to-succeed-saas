@@ -1,10 +1,9 @@
 import Link from 'next/link';
-import ToolkitClient from '@/components/ToolkitClient';
 
 export const metadata = {
   title: 'Leadership Reflections | Inspired to Succeed',
   description:
-    'Interactive executive leadership reflections based on the Inspired to Succeed framework by Wezi Khoza.',
+    'Leadership reflection workspace for the Inspired to Succeed executive toolkit.',
 };
 
 export default function LeadershipReflectionsPage() {
@@ -18,7 +17,7 @@ export default function LeadershipReflectionsPage() {
     >
       <section
         style={{
-          padding: '54px max(24px, calc((100vw - 1320px) / 2)) 46px',
+          padding: '60px max(24px, calc((100vw - 1280px) / 2))',
           background:
             'linear-gradient(135deg, #17150f 0%, #2b2418 100%)',
           color: '#ffffff',
@@ -28,11 +27,10 @@ export default function LeadershipReflectionsPage() {
           href="/toolkit"
           style={{
             display: 'inline-block',
-            marginBottom: '24px',
+            marginBottom: '28px',
             color: '#d8a12b',
             textDecoration: 'none',
             fontWeight: 800,
-            fontSize: '13px',
           }}
         >
           ← Back to Toolkit
@@ -45,7 +43,7 @@ export default function LeadershipReflectionsPage() {
             fontSize: '11px',
             fontWeight: 900,
             letterSpacing: '.16em',
-            marginBottom: '12px',
+            marginBottom: '14px',
           }}
         >
           01 · LEADERSHIP REFLECTIONS
@@ -53,11 +51,11 @@ export default function LeadershipReflectionsPage() {
 
         <h1
           style={{
-            margin: 0,
             maxWidth: '850px',
+            margin: 0,
             fontFamily: 'Georgia, serif',
-            fontSize: 'clamp(40px, 5vw, 64px)',
-            lineHeight: 1.05,
+            fontSize: 'clamp(42px, 6vw, 68px)',
+            lineHeight: 1.04,
           }}
         >
           Explore the leader you are becoming.
@@ -66,26 +64,82 @@ export default function LeadershipReflectionsPage() {
         <p
           style={{
             maxWidth: '760px',
-            marginTop: '22px',
+            marginTop: '24px',
             color: 'rgba(255,255,255,.72)',
+            fontSize: '18px',
             lineHeight: 1.7,
-            fontSize: '17px',
           }}
         >
-          Work through Wezi Khoza&apos;s six leadership themes and competency
-          reflections. Record where you are now, what the reflection awakens
-          in you and what leadership behaviour requires attention.
+          Work through the Inspired to Succeed™ leadership themes,
+          reflect on your current leadership state and build evidence of
+          intentional development.
         </p>
       </section>
 
       <section
         style={{
-          maxWidth: '1320px',
+          maxWidth: '1280px',
           margin: '0 auto',
-          padding: '46px 24px 80px',
+          padding: '56px 24px 90px',
         }}
       >
-        <ToolkitClient />
+        <div
+          style={{
+            padding: '36px',
+            borderRadius: '22px',
+            border: '1px solid #e1d7c9',
+            background: '#ffffff',
+          }}
+        >
+          <span
+            style={{
+              color: '#9a7016',
+              fontSize: '11px',
+              fontWeight: 900,
+              letterSpacing: '.14em',
+            }}
+          >
+            REFLECTION WORKSPACE
+          </span>
+
+          <h2
+            style={{
+              margin: '14px 0',
+              fontFamily: 'Georgia, serif',
+              fontSize: '34px',
+            }}
+          >
+            Leadership themes and reflections
+          </h2>
+
+          <p
+            style={{
+              maxWidth: '760px',
+              color: '#6e675f',
+              lineHeight: 1.7,
+            }}
+          >
+            The interactive reflection workbook will be rebuilt here as
+            smaller, individual toolkit pages. This keeps the platform fast
+            while preserving Wezi Khoza&apos;s six-theme leadership framework.
+          </p>
+
+          <Link
+            href="/toolkit"
+            style={{
+              display: 'inline-flex',
+              marginTop: '20px',
+              padding: '14px 20px',
+              borderRadius: '10px',
+              background: '#d8a12b',
+              color: '#17130c',
+              textDecoration: 'none',
+              fontWeight: 900,
+            }}
+          >
+            Return to Toolkit
+          </Link>
+        </div>
       </section>
     </main>
   );
