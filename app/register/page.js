@@ -2,8 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { supabase } from "@/lib/supabaseClient";
+import { createTrialDates } from "@/lib/license";
 
 export default function RegisterPage() {
+  const router = useRouter();
+
   const [form, setForm] = useState({
     fullName: "",
     email: "",
@@ -14,6 +19,7 @@ export default function RegisterPage() {
   });
 
   const [message, setMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [busy, setBusy] = useState(false);
 
   function updateField(event) {
@@ -25,43 +31,148 @@ export default function RegisterPage() {
     }));
   }
 
+  function getPlatformRole(accountType) {
+    if (accountType === "coach") {
+      return "coach";
+    }
+
+    if (accountType === "organisation") {
+      return "organisation_admin";
+    }
+
+    return "executive";
+  }
+
   async function handleSubmit(event) {
     event.preventDefault();
-    setMessage("");
 
-    if (!form.fullName.trim()) {
-      setMessage("Please enter your full name.");
+    setMessage("");
+    setErrorMessage("");
+
+    const fullName = form.fullName.trim();
+    const email = form.email.trim().toLowerCase();
+    const organisation = form.organisation.trim();
+
+    if (!fullName) {
+      setErrorMessage("Please enter your full name.");
       return;
     }
 
-    if (!form.email.trim()) {
-      setMessage("Please enter your email address.");
+    if (!email) {
+      setErrorMessage("Please enter your email address.");
       return;
     }
 
     if (form.password.length < 8) {
-      setMessage("Your password must contain at least 8 characters.");
+      setErrorMessage(
+        "Your password must contain at least 8 characters."
+      );
       return;
     }
 
     if (form.password !== form.confirmPassword) {
-      setMessage("The passwords do not match.");
+      setErrorMessage("The passwords do not match.");
       return;
     }
 
     setBusy(true);
 
-    /*
-      Registration will be connected to Supabase Auth
-      in the next implementation step.
-    */
+    try {
+      const { trialStartedAt, trialEndsAt } = createTrialDates();
 
-    setTimeout(() => {
-      setBusy(false);
+      const platformRole = getPlatformRole(form.accountType);
+
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password: form.password,
+        options: {
+          emailRedirectTo: `${window.location.origin}/login?confirmed=1`,
+          data: {
+            full_name: fullName,
+            account_type: form.accountType,
+            role: platformRole,
+            organisation: organisation || null,
+
+            licence_status: "trial",
+            trial_started_at: trialStartedAt,
+            trial_ends_at: trialEndsAt,
+
+            terms_accepted_at: new Date().toISOString(),
+          },
+        },
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      if (!data.user) {
+        throw new Error(
+          "The account could not be created. Please try again."
+        );
+      }
+
+      /*
+        Supabase normally requires email confirmation.
+
+        If there is no session, the user must confirm their
+        email before login.
+
+        If email confirmation has been disabled and Supabase
+        returns a session immediately, we can send the user
+        directly to the toolkit.
+      */
+
+      if (data.session) {
+        setMessage(
+          "Your account has been created and your 6-day free trial has started. Opening your workspace..."
+        );
+
+        setTimeout(() => {
+          router.push("/toolkit");
+        }, 1200);
+
+        return;
+      }
+
       setMessage(
-        "Registration form is ready. Account activation will be connected next."
+        "Your Inspired to Succeed™ account has been created. Your 6-day free trial has been prepared. Please check your email and confirm your account before logging in."
       );
-    }, 500);
+
+      setForm({
+        fullName: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+        accountType: "executive",
+        organisation: "",
+      });
+    } catch (error) {
+      console.error("Registration error:", error);
+
+      let friendlyMessage =
+        "We could not create your account. Please try again.";
+
+      const errorText = String(error?.message || "").toLowerCase();
+
+      if (
+        errorText.includes("already registered") ||
+        errorText.includes("already been registered")
+      ) {
+        friendlyMessage =
+          "An account already exists for this email address. Please use Login instead.";
+      } else if (errorText.includes("password")) {
+        friendlyMessage =
+          error.message ||
+          "Please choose a stronger password and try again.";
+      } else if (error?.message) {
+        friendlyMessage = error.message;
+      }
+
+      setErrorMessage(friendlyMessage);
+    } finally {
+      setBusy(false);
+    }
   }
 
   return (
@@ -103,10 +214,10 @@ export default function RegisterPage() {
               maxWidth: "600px",
             }}
           >
-            Create your personal Inspired to Succeed™ account and begin your
-            free trial. Your workspace will guide you from leadership
-            assessment and reflection through vision building and measurable
-            30-, 60- and 90-day commitments.
+            Create your Inspired to Succeed™ account and begin your
+            six-day free trial. Your personal workspace will guide you
+            from leadership assessment and reflection through vision
+            building and measurable 30-, 60- and 90-day commitments.
           </p>
 
           <div
@@ -118,19 +229,26 @@ export default function RegisterPage() {
           >
             <div>
               <strong>01 — Assess</strong>
-              <p>Explore your leadership competencies and development needs.</p>
+              <p>
+                Explore your leadership competencies and development
+                needs.
+              </p>
             </div>
 
             <div>
               <strong>02 — Reflect</strong>
               <p>
-                Turn your leadership experiences into meaningful insight.
+                Turn your leadership experiences into meaningful
+                insight.
               </p>
             </div>
 
             <div>
               <strong>03 — Envision</strong>
-              <p>Create a personal leadership vision and development focus.</p>
+              <p>
+                Create a personal leadership vision and development
+                focus.
+              </p>
             </div>
 
             <div>
@@ -140,6 +258,29 @@ export default function RegisterPage() {
                 commitments.
               </p>
             </div>
+          </div>
+
+          <div
+            style={{
+              marginTop: "34px",
+              padding: "22px",
+              borderRadius: "16px",
+              background: "rgba(255,255,255,0.75)",
+              border: "1px solid rgba(100,80,180,0.12)",
+            }}
+          >
+            <strong>6-Day Free Trial</strong>
+
+            <p
+              style={{
+                margin: "8px 0 0",
+                lineHeight: "1.6",
+              }}
+            >
+              No payment is required when you register. After six days,
+              you can continue your leadership journey by purchasing
+              the appropriate Inspired to Succeed™ licence.
+            </p>
           </div>
         </section>
 
@@ -152,13 +293,22 @@ export default function RegisterPage() {
             border: "1px solid rgba(100, 80, 180, 0.12)",
           }}
         >
-          <span className="eyebrow">Free trial</span>
+          <span className="eyebrow">6-Day Free Trial</span>
 
-          <h2 style={{ marginTop: "12px", marginBottom: "8px" }}>
+          <h2
+            style={{
+              marginTop: "12px",
+              marginBottom: "8px",
+            }}
+          >
             Create your account
           </h2>
 
-          <p style={{ marginBottom: "28px" }}>
+          <p
+            style={{
+              marginBottom: "28px",
+            }}
+          >
             Already registered?{" "}
             <Link href="/login">
               <strong>Login here</strong>
@@ -168,6 +318,7 @@ export default function RegisterPage() {
           <form onSubmit={handleSubmit}>
             <label style={labelStyle}>
               Full name
+
               <input
                 style={inputStyle}
                 type="text"
@@ -176,12 +327,14 @@ export default function RegisterPage() {
                 onChange={updateField}
                 placeholder="Your full name"
                 autoComplete="name"
+                disabled={busy}
                 required
               />
             </label>
 
             <label style={labelStyle}>
               Email address
+
               <input
                 style={inputStyle}
                 type="email"
@@ -190,20 +343,29 @@ export default function RegisterPage() {
                 onChange={updateField}
                 placeholder="you@example.com"
                 autoComplete="email"
+                disabled={busy}
                 required
               />
             </label>
 
             <label style={labelStyle}>
               I am joining as
+
               <select
                 style={inputStyle}
                 name="accountType"
                 value={form.accountType}
                 onChange={updateField}
+                disabled={busy}
               >
-                <option value="executive">Executive / Individual</option>
-                <option value="coach">Coach</option>
+                <option value="executive">
+                  Executive / Individual
+                </option>
+
+                <option value="coach">
+                  Coach
+                </option>
+
                 <option value="organisation">
                   Organisation representative
                 </option>
@@ -212,6 +374,7 @@ export default function RegisterPage() {
 
             <label style={labelStyle}>
               Organisation
+
               <input
                 style={inputStyle}
                 type="text"
@@ -219,11 +382,13 @@ export default function RegisterPage() {
                 value={form.organisation}
                 onChange={updateField}
                 placeholder="Organisation name (optional)"
+                disabled={busy}
               />
             </label>
 
             <label style={labelStyle}>
               Password
+
               <input
                 style={inputStyle}
                 type="password"
@@ -232,12 +397,14 @@ export default function RegisterPage() {
                 onChange={updateField}
                 placeholder="Minimum 8 characters"
                 autoComplete="new-password"
+                disabled={busy}
                 required
               />
             </label>
 
             <label style={labelStyle}>
               Confirm password
+
               <input
                 style={inputStyle}
                 type="password"
@@ -246,6 +413,7 @@ export default function RegisterPage() {
                 onChange={updateField}
                 placeholder="Repeat your password"
                 autoComplete="new-password"
+                disabled={busy}
                 required
               />
             </label>
@@ -260,21 +428,45 @@ export default function RegisterPage() {
                 lineHeight: "1.5",
               }}
             >
-              <input type="checkbox" required style={{ marginTop: "4px" }} />
+              <input
+                type="checkbox"
+                required
+                disabled={busy}
+                style={{
+                  marginTop: "4px",
+                }}
+              />
 
               <span>
-                I agree to the platform terms and privacy requirements and
-                understand that my trial access is subject to the applicable
-                licence conditions.
+                I agree to the platform terms and privacy
+                requirements and understand that my free trial lasts
+                for six days, after which a valid licence is required
+                for continued access.
               </span>
             </label>
+
+            {errorMessage && (
+              <div
+                style={{
+                  padding: "14px 16px",
+                  borderRadius: "10px",
+                  background: "#fff1f1",
+                  border: "1px solid #f0c8c8",
+                  marginBottom: "18px",
+                  lineHeight: "1.5",
+                }}
+              >
+                {errorMessage}
+              </div>
+            )}
 
             {message && (
               <div
                 style={{
-                  padding: "14px",
+                  padding: "14px 16px",
                   borderRadius: "10px",
-                  background: "#f4f1ff",
+                  background: "#eefaf3",
+                  border: "1px solid #c8e8d4",
                   marginBottom: "18px",
                   lineHeight: "1.5",
                 }}
@@ -292,9 +484,12 @@ export default function RegisterPage() {
                 border: "none",
                 cursor: busy ? "wait" : "pointer",
                 justifyContent: "center",
+                opacity: busy ? 0.7 : 1,
               }}
             >
-              {busy ? "Creating account..." : "Start My Free Trial"}
+              {busy
+                ? "Creating your account..."
+                : "Start My 6-Day Free Trial"}
             </button>
           </form>
 
@@ -306,11 +501,18 @@ export default function RegisterPage() {
               opacity: "0.75",
             }}
           >
-            Your trial does not require payment at registration.
+            No payment information is required to start your trial.
           </p>
 
-          <div style={{ textAlign: "center", marginTop: "18px" }}>
-            <Link href="/">← Return to home</Link>
+          <div
+            style={{
+              textAlign: "center",
+              marginTop: "18px",
+            }}
+          >
+            <Link href="/">
+              ← Return to home
+            </Link>
           </div>
         </section>
       </div>
