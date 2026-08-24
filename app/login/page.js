@@ -7,6 +7,7 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(true);
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState("");
 
@@ -14,7 +15,9 @@ export default function LoginPage() {
     event.preventDefault();
     setMessage("");
 
-    if (!email.trim()) {
+    const cleanEmail = email.trim().toLowerCase();
+
+    if (!cleanEmail) {
       setMessage("Please enter your email address.");
       return;
     }
@@ -27,15 +30,22 @@ export default function LoginPage() {
     setBusy(true);
 
     /*
-      Authentication will be connected to Supabase Auth
-      when the production database is created under
-      Wezi Khoza / family ownership.
+      Secure authentication will be connected to the
+      Inspired to Succeed production authentication backend.
+
+      Once connected, login will:
+      1. Authenticate the user.
+      2. Retrieve the user's licence status.
+      3. Check whether the 6-day trial is still active.
+      4. Allow active paid users into the toolkit.
+      5. Redirect expired users to /pricing.
     */
 
     setTimeout(() => {
       setBusy(false);
+
       setMessage(
-        "Login interface is ready. Secure account authentication will be connected next."
+        "The login page is ready. Secure authentication and licence verification will be activated when the production account database is connected."
       );
     }, 500);
   }
@@ -54,11 +64,11 @@ export default function LoginPage() {
       <div
         style={{
           width: "100%",
-          maxWidth: "1050px",
+          maxWidth: "1080px",
           margin: "0 auto",
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-          gap: "50px",
+          gap: "52px",
           alignItems: "center",
         }}
       >
@@ -72,42 +82,45 @@ export default function LoginPage() {
               margin: "18px 0",
             }}
           >
-            Welcome back to your leadership journey.
+            Continue your leadership development journey.
           </h1>
 
           <p
             style={{
               fontSize: "1.08rem",
               lineHeight: "1.8",
-              maxWidth: "580px",
+              maxWidth: "600px",
             }}
           >
             Sign in to continue your assessments, reflections, vision board
-            and leadership commitments from where you left off.
+            and 30-, 60- and 90-day leadership commitments from where you
+            stopped.
           </p>
 
           <div
             style={{
               marginTop: "32px",
-              padding: "24px",
-              background: "rgba(255,255,255,0.7)",
-              borderRadius: "18px",
-              border: "1px solid rgba(90,70,160,0.12)",
+              display: "grid",
+              gap: "16px",
             }}
           >
-            <strong>Your progress belongs to you.</strong>
+            <InfoCard
+              number="01"
+              title="6-Day Free Trial"
+              text="New users receive six days to explore Inspired to Succeed™ before paid access is required."
+            />
 
-            <p
-              style={{
-                marginTop: "8px",
-                marginBottom: 0,
-                lineHeight: "1.6",
-              }}
-            >
-              Once account storage is activated, your toolkit information will
-              remain available between sessions so that you can continue your
-              development journey without starting again.
-            </p>
+            <InfoCard
+              number="02"
+              title="Your Progress is Preserved"
+              text="Once persistent account storage is activated, your leadership work will remain available whenever you return."
+            />
+
+            <InfoCard
+              number="03"
+              title="Continue After Your Trial"
+              text="When the trial expires, you can purchase access securely through PayFast and continue using the toolkit."
+            />
           </div>
         </section>
 
@@ -120,7 +133,7 @@ export default function LoginPage() {
             border: "1px solid rgba(100, 80, 180, 0.12)",
           }}
         >
-          <span className="eyebrow">Secure access</span>
+          <span className="eyebrow">Secure account access</span>
 
           <h2
             style={{
@@ -128,23 +141,25 @@ export default function LoginPage() {
               marginBottom: "8px",
             }}
           >
-            Login to your account
+            Login
           </h2>
 
           <p
             style={{
               marginBottom: "28px",
+              lineHeight: "1.6",
             }}
           >
             New to Inspired to Succeed?{" "}
             <Link href="/register">
-              <strong>Start your free trial</strong>
+              <strong>Start your 6-day free trial</strong>
             </Link>
           </p>
 
           <form onSubmit={handleSubmit}>
             <label style={labelStyle}>
               Email address
+
               <input
                 style={inputStyle}
                 type="email"
@@ -185,6 +200,7 @@ export default function LoginPage() {
                     border: "none",
                     cursor: "pointer",
                     fontWeight: "700",
+                    padding: "6px",
                   }}
                 >
                   {showPassword ? "Hide" : "Show"}
@@ -208,10 +224,15 @@ export default function LoginPage() {
                   gap: "8px",
                   alignItems: "center",
                   fontSize: "0.92rem",
+                  cursor: "pointer",
                 }}
               >
-                <input type="checkbox" />
-                Remember me
+                <input
+                  type="checkbox"
+                  checked={rememberMe}
+                  onChange={(event) => setRememberMe(event.target.checked)}
+                />
+                Keep me signed in
               </label>
 
               <Link href="/forgot-password">
@@ -222,7 +243,7 @@ export default function LoginPage() {
             {message && (
               <div
                 style={{
-                  padding: "14px",
+                  padding: "14px 16px",
                   borderRadius: "10px",
                   background: "#f4f1ff",
                   marginBottom: "18px",
@@ -244,25 +265,28 @@ export default function LoginPage() {
                 justifyContent: "center",
               }}
             >
-              {busy ? "Signing in..." : "Login"}
+              {busy ? "Signing in..." : "Login to My Workspace"}
             </button>
           </form>
 
           <div
             style={{
-              marginTop: "26px",
+              marginTop: "28px",
               paddingTop: "24px",
               borderTop: "1px solid #ececf2",
               textAlign: "center",
             }}
           >
+            <strong>Has your trial ended?</strong>
+
             <p
               style={{
-                marginBottom: "12px",
+                margin: "8px 0 16px",
                 fontSize: "0.92rem",
+                lineHeight: "1.6",
               }}
             >
-              Trial expired or ready to subscribe?
+              Purchase access to continue your leadership development journey.
             </p>
 
             <Link className="button secondary" href="/pricing">
@@ -272,15 +296,70 @@ export default function LoginPage() {
 
           <div
             style={{
-              marginTop: "22px",
+              marginTop: "24px",
               textAlign: "center",
+              display: "flex",
+              gap: "16px",
+              justifyContent: "center",
+              flexWrap: "wrap",
             }}
           >
-            <Link href="/">← Return to home</Link>
+            <Link href="/register">
+              Create Account
+            </Link>
+
+            <span style={{ opacity: 0.35 }}>•</span>
+
+            <Link href="/">
+              Return Home
+            </Link>
           </div>
         </section>
       </div>
     </main>
+  );
+}
+
+function InfoCard({ number, title, text }) {
+  return (
+    <div
+      style={{
+        padding: "20px 22px",
+        background: "rgba(255,255,255,0.72)",
+        borderRadius: "16px",
+        border: "1px solid rgba(90,70,160,0.10)",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          gap: "14px",
+          alignItems: "flex-start",
+        }}
+      >
+        <strong
+          style={{
+            opacity: 0.55,
+            minWidth: "28px",
+          }}
+        >
+          {number}
+        </strong>
+
+        <div>
+          <strong>{title}</strong>
+
+          <p
+            style={{
+              margin: "6px 0 0",
+              lineHeight: "1.6",
+            }}
+          >
+            {text}
+          </p>
+        </div>
+      </div>
+    </div>
   );
 }
 
